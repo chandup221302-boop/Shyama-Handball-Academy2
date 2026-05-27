@@ -678,48 +678,38 @@ footer {
     .navbar {
         display: flex;
         justify-content: flex-end;
+        z-index: 10001; /* THIS IS THE FIX - lifts navbar's stacking context above the overlay */
     }
     .mobile-menu-btn {
         display: block;
-        position: fixed;
-        right: 10px;
-        top: auto;
-        z-index: 99999; /* Highest - always on top of everything */
-        background: transparent;
+        position: relative;
+        z-index: 2;
     }
     .nav-links {
-        position: fixed; /* FIXED to viewport, not inside navbar - escapes stacking context */
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
         width: 100%;
-        max-height: 0; /* Hidden by default */
-        overflow: hidden; /* Prevent content from showing when closed */
+        max-height: 0;
+        overflow: hidden;
         background-color: var(--primary-color);
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 0;
         padding-bottom: 0;
         transition: max-height 0.4s ease-in-out;
-        z-index: 99998; /* Just below the menu button, but way above overlay */
+        z-index: 1;
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
     .nav-links.active {
-        max-height: 100vh;
+        max-height: calc(100vh - 50px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
-    .nav-links li {
-        display: block;
-        width: 100%;
-    }
     .nav-links li a {
-        display: block;
-        width: 100%;
         padding: 12px 20px;
         border-bottom: 1px solid rgba(255,255,255,0.05);
-        position: relative;
-        z-index: 99998; /* Ensure links themselves are tappable */
     }
     .close-menu {
         display: none !important;

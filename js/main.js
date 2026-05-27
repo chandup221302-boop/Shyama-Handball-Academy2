@@ -23,18 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileBtn = document.createElement('div');
         mobileBtn.className = 'mobile-menu-btn';
         mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        navbar.appendChild(mobileBtn);
+        navbar.insertBefore(mobileBtn, navbar.firstChild);
 
-        // Position the mobile button vertically aligned with navbar
-        const positionBtn = () => {
-            const navRect = navbar.getBoundingClientRect();
-            mobileBtn.style.top = navRect.top + 'px';
-        };
-        positionBtn();
-        window.addEventListener('resize', positionBtn);
-        window.addEventListener('scroll', positionBtn);
-
-        // Create overlay (behind menu, only for dimming background)
+        // Create overlay
         const overlay = document.createElement('div');
         overlay.className = 'menu-overlay';
         document.body.appendChild(overlay);
@@ -45,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const openMenu = () => {
             navLinks.classList.add('active');
             overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
         };
@@ -52,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeMenu = () => {
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
+            document.body.style.overflow = '';
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         };
@@ -63,11 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mobileBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', closeMenu);
-
-        // DO NOT add any click listeners on the nav links!
-        // Let the browser handle <a href="..."> navigation natively.
-        // Any JS interference (e.preventDefault, closeMenu, setTimeout) 
-        // can block mobile browsers from following the link.
     }
 
     // Carousels Logic (Auto-slide, Buttons, and Dots)
