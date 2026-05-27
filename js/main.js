@@ -25,33 +25,46 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
         navbar.insertBefore(mobileBtn, navbar.firstChild);
 
-        // Add close button to nav links
-        const closeBtn = document.createElement('div');
-        closeBtn.className = 'close-menu';
-        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-        navLinks.insertBefore(closeBtn, navLinks.firstChild);
-
         // Create overlay
         const overlay = document.createElement('div');
         overlay.className = 'menu-overlay';
         document.body.appendChild(overlay);
+
+        const icon = mobileBtn.querySelector('i');
 
         // Toggle logic
         const openMenu = () => {
             navLinks.classList.add('active');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
         };
 
         const closeMenu = () => {
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         };
 
-        mobileBtn.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
+        const toggleMenu = () => {
+            if (navLinks.classList.contains('active')) closeMenu();
+            else openMenu();
+        };
+
+        mobileBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking a link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                // Slight delay ensures the browser processes the navigation click before hiding the menu
+                setTimeout(closeMenu, 150);
+            });
+        });
     }
 
     // Carousels Logic (Auto-slide, Buttons, and Dots)
@@ -63,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(slider) {
             const items = Array.from(slider.children);
-            const scrollAmount = 350;
+            // Dynamic scroll amount based on 1 item width + gap
+            const getScrollAmount = () => items.length > 0 ? items[0].offsetWidth + 20 : 350;
             let dots = [];
 
             // Generate dots
@@ -96,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Buttons logic
             if(leftBtn && rightBtn) {
                 leftBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
                 });
                 rightBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                 });
             }
 
@@ -110,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
                         slider.scrollTo({ left: 0, behavior: 'smooth' });
                     } else {
-                        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                        slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                     }
                 }, 3000); // slide every 3 seconds
             };
