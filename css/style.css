@@ -681,36 +681,46 @@ footer {
     }
     .mobile-menu-btn {
         display: block;
-        position: relative;
-        z-index: 10001; /* Above nav-links */
+        position: fixed;
+        right: 10px;
+        top: auto;
+        z-index: 99999; /* Highest - always on top of everything */
+        background: transparent;
     }
     .nav-links {
-        position: absolute; /* Relative to the navbar */
-        top: 0; /* Align perfectly with navbar top */
+        position: fixed; /* FIXED to viewport, not inside navbar - escapes stacking context */
+        top: 0;
         left: 0;
         right: 0;
-        width: 100%; 
+        width: 100%;
         max-height: 0; /* Hidden by default */
         overflow: hidden; /* Prevent content from showing when closed */
         background-color: var(--primary-color);
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 0;
-        padding-bottom: 0; /* No padding when closed */
-        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; /* Smooth slide down */
-        z-index: 10000;
+        padding-bottom: 0;
+        transition: max-height 0.4s ease-in-out;
+        z-index: 99998; /* Just below the menu button, but way above overlay */
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
     .nav-links.active {
-        max-height: calc(100vh - 50px); /* Exactly fill the viewport below the header */
-        overflow-y: auto; /* Scrollable inside */
-        -webkit-overflow-scrolling: touch; /* Fix iOS scrolling freeze bug */
+        max-height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav-links li {
+        display: block;
+        width: 100%;
     }
     .nav-links li a {
-        padding: 12px 20px; /* Reduced padding so all items fit on the screen without scrolling */
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
         border-bottom: 1px solid rgba(255,255,255,0.05);
+        position: relative;
+        z-index: 99998; /* Ensure links themselves are tappable */
     }
-    /* Removed .sidebar-header and .sidebar-contact styling as it's no longer injected */
     .close-menu {
         display: none !important;
     }
