@@ -1,0 +1,163 @@
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Header Height for Sticky Navbar
+    const updateHeaderHeight = () => {
+        const topHeader = document.querySelector('.top-header');
+        if(topHeader) {
+            document.documentElement.style.setProperty('--header-height', `${topHeader.offsetHeight}px`);
+        }
+    };
+    window.addEventListener('resize', updateHeaderHeight);
+    window.addEventListener('load', () => {
+        updateHeaderHeight();
+        // Hide Preloader
+        document.body.classList.add('loaded');
+    });
+    updateHeaderHeight();
+
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navbar && navLinks) {
+        // Add mobile menu button to navbar
+        const mobileBtn = document.createElement('div');
+        mobileBtn.className = 'mobile-menu-btn';
+        mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        navbar.insertBefore(mobileBtn, navbar.firstChild);
+
+        // Add close button to nav links
+        const closeBtn = document.createElement('div');
+        closeBtn.className = 'close-menu';
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        navLinks.insertBefore(closeBtn, navLinks.firstChild);
+
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+
+        // Toggle logic
+        const openMenu = () => {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        mobileBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    }
+
+    // Carousels Logic (Auto-slide, Buttons, and Dots)
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+        const slider = wrapper.querySelector('.slider-container');
+        const leftBtn = wrapper.querySelector('.left-btn');
+        const rightBtn = wrapper.querySelector('.right-btn');
+        const dotsContainer = wrapper.querySelector('.carousel-dots');
+
+        if(slider) {
+            const items = Array.from(slider.children);
+            const scrollAmount = 350;
+            let dots = [];
+
+            // Generate dots
+            if(dotsContainer && items.length > 0) {
+                items.forEach((item, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if(index === 0) dot.classList.add('active');
+                    
+                    dot.addEventListener('click', () => {
+                        slider.scrollTo({
+                            left: item.offsetLeft - slider.offsetLeft,
+                            behavior: 'smooth'
+                        });
+                    });
+                    
+                    dotsContainer.appendChild(dot);
+                    dots.push(dot);
+                });
+            }
+
+            // Update active dot on scroll
+            slider.addEventListener('scroll', () => {
+                let index = Math.round(slider.scrollLeft / items[0].clientWidth);
+                if(index >= dots.length) index = dots.length - 1;
+                dots.forEach(d => d.classList.remove('active'));
+                if(dots[index]) dots[index].classList.add('active');
+            });
+
+            // Buttons logic
+            if(leftBtn && rightBtn) {
+                leftBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                rightBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+
+            // Auto-slide logic
+            let autoSlideInterval;
+            const startAutoSlide = () => {
+                autoSlideInterval = setInterval(() => {
+                    if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                        slider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                }, 3000); // slide every 3 seconds
+            };
+
+            const stopAutoSlide = () => clearInterval(autoSlideInterval);
+
+            // Start auto-slide by default
+            startAutoSlide();
+
+            // Pause auto-slide on hover/touch
+            wrapper.addEventListener('mouseenter', stopAutoSlide);
+            wrapper.addEventListener('mouseleave', startAutoSlide);
+            wrapper.addEventListener('touchstart', stopAutoSlide);
+            wrapper.addEventListener('touchend', startAutoSlide);
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add animation class on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.card, .section-title, .about-content');
+        elements.forEach(el => {
+            const elTop = el.getBoundingClientRect().top;
+            if (elTop < window.innerHeight - 100) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Initial styles for elements to be animated
+    const elementsToAnimate = document.querySelectorAll('.card, .section-title, .about-content');
+    elementsToAnimate.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Trigger once on load
+});
