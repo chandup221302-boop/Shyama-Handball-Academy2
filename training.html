@@ -3,41 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyama Handball Academy | Training Programs</title>
+    <title>Shyama Handball Academy | Home</title>
+    <meta name="description" content="Welcome to Shyama Handball Academy, Varanasi. Join us for premium handball training, professional coaching, and state-of-the-art facilities.">
     <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader"><div class="spinner"></div></div>
-    <!-- Top Bar for Contact Info -->
+
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi</span>
-        </div>
-        <div class="top-bar-right">
             <span><i class="fas fa-phone"></i> +91 8765550245, 7084900009</span>
             <span><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
         </div>
+        <div class="top-bar-right">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <span class="language-selector"><i class="fas fa-globe"></i> English <i class="fas fa-caret-down"></i></span>
+        </div>
     </div>
-
-    <!-- Header Section -->
-    <header class="top-header">
-        <div class="logo-left">
-            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo">
-        </div>
-        <div class="header-center">
-            <h1>Shyama Handball Academy</h1>
-            <p>Under the aegis of : S.N. Pandey Khel Sansthan Trust</p>
-        </div>
-        <div class="logo-right">
-            <img src="SN Pandey Handball Khel Sansthan Logo (1).png" alt="S.N. Pandey Trust Logo">
-        </div>
-    </header>
 
     <!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logos">
+            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo" class="logo-1">
+            <div class="vertical-divider"></div>
+            <span class="academy-name-text" style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 15px; white-space: nowrap; display: inline-block;">Shyama Handball Academy</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -50,72 +47,1623 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
+<style>
+    :root {
+      --navy: #0f172a;
+      --navy2: #1e293b;
+      --gold: #f59e0b;
+      --gold2: #d97706;
+      --white:  #ffffff;
+      --off:    #f7f8fc;
+      --muted:  #64748b;
+      --border: #e2e8f0;
+      --card:   #ffffff;
+      --text:   #0f172a;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(7,30,61,0.09);
+    }
 
-    <!-- Page Content -->
-    <section class="section">
-        <h2 class="section-title">Our Training Programs</h2>
-        <div class="grid-3">
-            <div class="card">
-                <i class="fas fa-child card-icon"></i>
-                <h3>Beginner Training</h3>
-                <p>Focuses on fundamental skills, rules of the game, and basic physical conditioning for newcomers.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-running card-icon"></i>
-                <h3>Advanced Training</h3>
-                <p>Intensive sessions covering advanced tactics, strategic gameplay, and high-performance drills.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-users card-icon"></i>
-                <h3>Boys & Girls Teams</h3>
-                <p>Dedicated team training for both boys and girls, focusing on team chemistry and match play.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-sun card-icon"></i>
-                <h3>Summer Camp</h3>
-                <p>Special intensive training camps during summer vacations to boost skills rapidly.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-dumbbell card-icon"></i>
-                <h3>Fitness & Conditioning</h3>
-                <p>Specialized strength, agility, and endurance training tailored specifically for handball athletes.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-school card-icon"></i>
-                <h3>School Programs</h3>
-                <p>Partnership programs with local schools to introduce and develop handball at the grassroots level.</p>
-            </div>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--off);
+      color: var(--text);
+      overflow-x: clip;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    
+
+    
+
+    /* ─── HERO ────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d3060 55%, #112244 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(245,197,24,0.1);
+      pointer-events: none;
+    }
+
+    .hero-ring-1 { width: 500px; height: 500px; top: -200px; right: -150px; }
+    .hero-ring-2 { width: 300px; height: 300px; bottom: -120px; left: -80px; border-color: rgba(245,197,24,0.07); }
+    .hero-ring-3 { width: 200px; height: 200px; top: 30px; left: 10%; border-color: rgba(255,255,255,0.05); }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,197,24,0.12);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 30px;
+      padding: 6px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.68);
+      font-weight: 300;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* filter pills */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .filter-pill {
+      padding: 8px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.22s;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .filter-pill:hover,
+    .filter-pill.active {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* hero stats strip */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hs { text-align: center; }
+    .hs-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+    }
+    .hs-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* ─── MAIN WRAPPER ────────────────────────── */
+    .main { max-width: 1060px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+    /* section divider label */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .section-label:first-child { margin-top: 0; }
+
+    .sl-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .sl-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ─── PROGRAM CARD ────────────────────────── */
+    .prog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      margin-bottom: 1.75rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .prog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(7,30,61,0.13);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .prog-card:nth-child(1) { animation-delay: 0.05s; }
+    .prog-card:nth-child(2) { animation-delay: 0.12s; }
+    .prog-card:nth-child(3) { animation-delay: 0.19s; }
+    .prog-card:nth-child(4) { animation-delay: 0.26s; }
+
+    /* visual panel */
+    .prog-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+
+    .prog-visual-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    .prog-card:hover .prog-visual-bg { transform: scale(1.05); }
+
+    .prog-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,30,61,0.92) 0%, rgba(7,30,61,0.4) 60%, transparent 100%);
+    }
+
+    .prog-level-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .badge-green  { background: #22c55e; color: #fff; }
+    .badge-orange { background: #f97316; color: #fff; }
+    .badge-blue   { background: #3b82f6; color: #fff; }
+    .badge-pink   { background: #ec4899; color: #fff; }
+    .badge-amber  { background: var(--gold); color: var(--navy); }
+    .badge-red    { background: #ef4444; color: #fff; }
+    .badge-teal   { background: #14b8a6; color: #fff; }
+    .badge-purple { background: #8b5cf6; color: #fff; }
+
+    .prog-icon-wrap {
+      width: 50px; height: 50px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      color: var(--gold);
+      position: relative;
+      z-index: 2;
+      margin-bottom: 10px;
+    }
+
+    .prog-visual-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+      line-height: 1.2;
+    }
+
+    .prog-visual-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      position: relative;
+      z-index: 2;
+      margin-top: 4px;
+    }
+
+    /* content panel */
+    .prog-content {
+      padding: 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .prog-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* meta row */
+    .prog-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 12.5px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .meta-chip i { color: var(--navy2); font-size: 14px; }
+
+    /* highlights */
+    .prog-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .hl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .hl-item i {
+      font-size: 15px;
+      color: #22c55e;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* CTA row */
+    .prog-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .prog-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .prog-price strong {
+      font-size: 1.3rem;
+      color: var(--navy);
+    }
+
+    .btn-enroll {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-enroll:hover { background: var(--navy2); transform: translateY(-1px); }
+
+    .btn-enroll-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+
+    .btn-enroll-outline:hover { background: var(--navy); color: var(--white); }
+
+    /* ─── 2-COL GRID (for Boys/Girls) ──────────── */
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .dual-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .dual-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(7,30,61,0.13);
+    }
+
+    .dual-visual {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .dual-visual-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s;
+    }
+
+    .dual-card:hover .dual-visual-bg { transform: scale(1.07); }
+
+    .dual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,30,61,0.9) 0%, rgba(7,30,61,0.3) 70%, transparent 100%);
+    }
+
+    .dual-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .dual-title-wrap {
+      position: absolute;
+      bottom: 14px; left: 16px;
+      z-index: 2;
+    }
+
+    .dual-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .dual-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+
+    .dual-body { padding: 1.25rem 1.5rem; }
+
+    .dual-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .dual-list { list-style: none; display: grid; gap: 6px; }
+
+    .dual-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .dual-list li i { font-size: 15px; color: #22c55e; flex-shrink: 0; }
+
+    .dual-footer {
+      padding: 0 1.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .dual-age { font-size: 13px; color: var(--muted); }
+    .dual-age strong { color: var(--navy); }
+
+    /* ─── SUMMER CAMP SPECIAL ─────────────────── */
+    .summer-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 6px 32px rgba(245,197,24,0.15);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .summer-bg {
+      background: linear-gradient(135deg, #071e3d 0%, #1a4a2e 50%, #0d3060 100%);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summer-bg::before {
+      content: '☀️';
+      position: absolute;
+      font-size: 8rem;
+      top: -20px;
+      right: 30px;
+      opacity: 0.15;
+      filter: grayscale(1);
+    }
+
+    .summer-deco {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,197,24,0.08);
+      top: -100px; left: -80px;
+    }
+
+    .summer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .summer-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(245,197,24,0.15);
+      border: 1px solid rgba(245,197,24,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .summer-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .summer-title span { color: var(--gold); }
+
+    .summer-desc {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      max-width: 460px;
+    }
+
+    .summer-dates-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(245,197,24,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      min-width: 210px;
+      flex-shrink: 0;
+    }
+
+    .summer-dates-box h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .date-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 7px;
+    }
+
+    .date-row i { color: var(--gold); font-size: 15px; }
+
+    .summer-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sf-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .sf-item:hover { background: rgba(245,197,24,0.1); border-color: rgba(245,197,24,0.25); }
+
+    .sf-item i { font-size: 28px; color: var(--gold); display: block; margin-bottom: 8px; }
+
+    .sf-item span {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ─── FITNESS CARD ────────────────────────── */
+    .fitness-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 1.75rem;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .fitness-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fitness-header::after {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(245,197,24,0.06);
+      right: -60px; top: -60px;
+    }
+
+    .fitness-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      background: rgba(245,197,24,0.15);
+      border: 1px solid rgba(245,197,24,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px;
+      color: var(--gold);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fitness-header-text { position: relative; z-index: 1; }
+
+    .fitness-header-text h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .fitness-header-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    .fitness-body {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .ft-module {
+      padding: 1.5rem;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .ft-module:last-child { border-right: none; }
+    .ft-module:hover { background: var(--off); }
+
+    .ft-module-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .fmi-red    { background: #fee2e2; color: #dc2626; }
+    .fmi-blue   { background: #dbeafe; color: #1d4ed8; }
+    .fmi-green  { background: #dcfce7; color: #16a34a; }
+
+    .ft-module h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .ft-module p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .fitness-footer {
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--border);
+      background: var(--off);
+    }
+
+    .fitness-tags { display: flex; flex-wrap: wrap; gap: 8px; flex: 1; }
+
+    .f-tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ─── SCHOOL PROGRAM ──────────────────────── */
+    .school-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 1.75rem;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .school-top {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+    }
+
+    .school-info { padding: 2rem; }
+
+    .school-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #16a34a;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .school-info h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .school-info p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .school-stats {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .ss-item { text-align: center; }
+
+    .ss-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      display: block;
+    }
+
+    .ss-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.7px; }
+
+    .school-visual {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .school-visual-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #071e3d, #0d3060);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 12px;
+    }
+
+    .school-visual-bg i {
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.85;
+    }
+
+    .school-visual-bg p {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .school-deliverables {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .sd-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .sd-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .sd-item h5 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .sd-item p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ─── TOURNAMENT PREP ─────────────────────── */
+    .tourn-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 1.75rem;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .tourn-hero {
+      background: linear-gradient(135deg, #1a0533, #2d1060, #071e3d);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tourn-hero::before {
+      content: '🏆';
+      position: absolute;
+      font-size: 9rem;
+      right: 2rem;
+      top: -10px;
+      opacity: 0.1;
+    }
+
+    .tourn-hero-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tourn-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(139,92,246,0.2);
+      border: 1px solid rgba(139,92,246,0.35);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #a78bfa;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .tourn-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .tourn-title span { color: #c4b5fd; }
+
+    .tourn-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 420px;
+    }
+
+    .tourn-badge-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 180px;
+    }
+
+    .tb {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tb i { color: #a78bfa; font-size: 16px; }
+
+    .tourn-phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .tp-phase {
+      padding: 1.5rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .tp-phase:last-child { border-right: none; }
+    .tp-phase:hover { background: #faf5ff; }
+
+    .tp-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ede9fe;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .tp-phase h4 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .tp-phase p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── CTA BANNER ──────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      border-radius: var(--radius);
+      padding: 3rem;
+      text-align: center;
+      margin-top: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      width: 350px; height: 350px;
+      border-radius: 50%;
+      background: rgba(245,197,24,0.06);
+      top: -120px; right: -80px;
+    }
+
+    .cta-banner h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner h2 span { color: var(--gold); }
+
+    .cta-banner p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: background 0.2s;
+    }
+
+    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    
+
+    
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 768px) {
+      
+      
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .main { padding: 2rem 1rem 4rem; }
+
+      .prog-card { grid-template-columns: 1fr; }
+      .prog-visual { min-height: 200px; }
+
+      .dual-grid { grid-template-columns: 1fr; }
+
+      .summer-features { grid-template-columns: repeat(2,1fr); }
+      .summer-top { flex-direction: column; }
+      .summer-dates-box { min-width: unset; width: 100%; }
+
+      .prog-cta { flex-direction: column; align-items: flex-start; gap: 15px; }
+      .dual-footer { flex-direction: column; align-items: flex-start; gap: 15px; }
+      .fitness-footer { flex-direction: column; align-items: flex-start; gap: 15px; }
+
+      .fitness-body { grid-template-columns: 1fr; }
+      .ft-module { border-right: none; border-bottom: 1px solid var(--border); }
+      .ft-module:last-child { border-bottom: none; }
+
+      .school-top { grid-template-columns: 1fr; }
+      .school-visual { display: none; }
+      .school-deliverables { grid-template-columns: 1fr 1fr; }
+
+      .tourn-hero-inner { flex-direction: column; }
+      .tourn-phases { grid-template-columns: 1fr 1fr; }
+      .tp-phase:nth-child(2) { border-right: none; }
+      .tp-phase:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+      .tp-phase:nth-child(4) { border-right: none; border-top: 1px solid var(--border); }
+
+      .hero-stats { gap: 1.5rem; }
+      .cta-banner { padding: 2rem 1.25rem; }
+      .cta-banner h2 { font-size: 1.4rem; }
+    }
+  </style>
+
+    <!-- Hero Banner -->
+    <section class="hero-slider-section" style="height: 50vh; min-height: 400px; display: flex; align-items: center; justify-content: center; background: url('assets/Images/hero_handball.png') top center/cover no-repeat; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(11, 17, 32, 0.6), rgba(11, 17, 32, 0.9));"></div>
+        <div style="position: relative; z-index: 10; text-align: center; padding: 0 20px;">
+            <h1 style="color: #fff; font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; letter-spacing: 2px;">TRAINING <span class="gold-text">PROGRAMS</span></h1>
+            <div style="width: 100px; height: 4px; background: #f59e0b; margin: 0 auto 20px;"></div>
+            <p style="color: #e2e8f0; font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">From your very first step onto the court to competing on the national stage &mdash; we have a program designed precisely for you.</p>
         </div>
     </section>
+    
+<div class="main">
+<div class="filter-bar" style="margin-bottom: 30px;">
+    <button class="filter-pill active" onclick="filterCards('all',this)">All Programs</button>
+    <button class="filter-pill" onclick="filterCards('foundation',this)">Foundation</button>
+    <button class="filter-pill" onclick="filterCards('teams',this)">Teams</button>
+    <button class="filter-pill" onclick="filterCards('special',this)">Special Programs</button>
+    <button class="filter-pill" onclick="filterCards('elite',this)">Elite & Competitive</button>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Shyama Handball Academy</h4>
-                <p style="margin-bottom: 10px;">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: var(--secondary-color);"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</p>
-                <p><i class="fas fa-phone" style="margin-right: 5px; color: var(--secondary-color);"></i> +91 8765550245, 7084900009</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="training.html"><i class="fas fa-angle-right"></i> Training Programs</a></li>
-                    <li><a href="join.html"><i class="fas fa-angle-right"></i> Admissions</a></li>
-                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+
+  <!-- ── FOUNDATION PROGRAMS ── -->
+  <div class="section-label">
+    <div class="sl-line"></div>
+    <div class="sl-text">Foundation Programs</div>
+    <div class="sl-line"></div>
+  </div>
+
+  <!-- BEGINNER -->
+  <div class="prog-card" data-category="foundation">
+    <div class="prog-visual">
+      <div class="prog-visual-bg" style="background: url('assets/Images/training_1.png') center/cover no-repeat;"></div>
+      <div class="prog-visual-overlay"></div>
+      <span class="prog-level-badge badge-green">Beginner</span>
+      <div class="prog-icon-wrap"><i class="ti ti-hand-stop"></i></div>
+      <div class="prog-visual-title">Beginner Training</div>
+      <div class="prog-visual-sub">Age 6–14 · All Backgrounds Welcome</div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-desc">Our Beginner Training Program is the perfect launchpad for young athletes discovering handball for the very first time. Designed by certified coaches, this program introduces the fundamentals of handball — ball handling, passing, footwork, and court awareness — in a safe, encouraging, and fun environment that builds genuine love for the sport.</p>
+      <div class="prog-meta">
+        <span class="meta-chip"><i class="ti ti-clock"></i> 5 days/week · 90 min/session</span>
+        <span class="meta-chip"><i class="ti ti-users"></i> Batch size: 15 max</span>
+        <span class="meta-chip"><i class="ti ti-calendar"></i> Rolling admissions</span>
+        <span class="meta-chip"><i class="ti ti-certificate"></i> Progress certificates</span>
+      </div>
+      <div class="prog-highlights">
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Basic passing & catching drills</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Movement & agility fundamentals</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Introduction to game rules</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Team bonding & sportmanship</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Monthly skill assessments</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Parent progress updates</div>
+      </div>
+      <div class="prog-cta">
+        <div class="prog-price">Starting at <strong>₹800/mo</strong></div>
+        <div style="display:flex;gap:10px;">
+          <a href="join.html" class="btn-enroll btn-enroll-outline"><i class="ti ti-info-circle"></i> Learn More</a>
+          <a href="join.html" class="btn-enroll"><i class="ti ti-user-plus"></i> Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVANCED -->
+  <div class="prog-card" data-category="foundation">
+    <div class="prog-visual">
+      <div class="prog-visual-bg" style="background: url('assets/Images/training_2.png') center/cover no-repeat;"></div>
+      <div class="prog-visual-overlay"></div>
+      <span class="prog-level-badge badge-orange">Advanced</span>
+      <div class="prog-icon-wrap"><i class="ti ti-flame"></i></div>
+      <div class="prog-visual-title">Advanced Training</div>
+      <div class="prog-visual-sub">Age 14–22 · Competitive Athletes</div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-desc">Designed for athletes who have mastered the basics and are ready to push their performance to the next level. The Advanced Training Program focuses on tactical intelligence, high-intensity conditioning, positional specialization, and competitive match simulation — preparing players for state and national tournaments.</p>
+      <div class="prog-meta">
+        <span class="meta-chip"><i class="ti ti-clock"></i> 6 days/week · 2.5 hrs/session</span>
+        <span class="meta-chip"><i class="ti ti-users"></i> Batch size: 12 max</span>
+        <span class="meta-chip"><i class="ti ti-chart-line"></i> Performance tracking</span>
+        <span class="meta-chip"><i class="ti ti-video"></i> Video analysis included</span>
+      </div>
+      <div class="prog-highlights">
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Advanced tactical playbooks</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> High-intensity interval training</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Positional specialization</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Match strategy & game film</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Strength & power sessions</div>
+        <div class="hl-item"><i class="ti ti-circle-check"></i> Tournament exposure</div>
+      </div>
+      <div class="prog-cta">
+        <div class="prog-price">Starting at <strong>₹1,500/mo</strong></div>
+        <div style="display:flex;gap:10px;">
+          <a href="join.html" class="btn-enroll btn-enroll-outline"><i class="ti ti-info-circle"></i> Learn More</a>
+          <a href="join.html" class="btn-enroll"><i class="ti ti-user-plus"></i> Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TEAM PROGRAMS ── -->
+  <div class="section-label">
+    <div class="sl-line"></div>
+    <div class="sl-text">Team Programs</div>
+    <div class="sl-line"></div>
+  </div>
+
+  <div class="dual-grid" data-category="teams">
+    <!-- BOYS TEAM -->
+    <div class="dual-card">
+      <div class="dual-visual">
+        <div class="dual-visual-bg" style="background: url('assets/Images/hero_banner_wide.png') center/cover no-repeat;"></div>
+        <div class="dual-overlay"></div>
+        <span class="dual-badge badge-blue">Boys Team</span>
+        <div class="prog-icon-wrap" style="position: absolute; top: 12px; right: 12px; margin: 0; width: 40px; height: 40px; font-size: 20px;"><i class="fas fa-mars"></i></div>
+        <div class="dual-title-wrap">
+          <div class="dual-title">Boys Handball Team</div>
+          <div class="dual-sub">Age 10–22 · Boys Only</div>
+        </div>
+      </div>
+      <div class="dual-body">
+        <p class="dual-desc">The Boys Team program is a structured, competitive squad environment for male players aged 10 to 22. Focused on discipline, tactical teamwork, and physical dominance, our boys regularly compete at district, state, and national levels under experienced coaching staff.</p>
+        <ul class="dual-list">
+          <li><i class="ti ti-circle-check"></i> Competitive squad selection process</li>
+          <li><i class="ti ti-circle-check"></i> Inter-district & state tournament participation</li>
+          <li><i class="ti ti-circle-check"></i> Strength-focused conditioning</li>
+          <li><i class="ti ti-circle-check"></i> Leadership & captain mentorship</li>
+          <li><i class="ti ti-circle-check"></i> Sports psychology sessions</li>
+        </ul>
+      </div>
+      <div class="dual-footer">
+        <div class="dual-age">Age: <strong>10–22 years</strong> | <strong>Male Athletes</strong></div>
+        <a href="join.html" class="btn-enroll" style="font-size:12.5px;padding:8px 16px;"><i class="ti ti-user-plus"></i> Join Team</a>
+      </div>
+    </div>
+
+    <!-- GIRLS TEAM -->
+    <div class="dual-card">
+      <div class="dual-visual">
+        <div class="dual-visual-bg" style="background: url('assets/Images/hero_handball.png') center/cover no-repeat;"></div>
+        <div class="dual-overlay"></div>
+        <span class="dual-badge badge-pink">Girls Team</span>
+        <div class="prog-icon-wrap" style="position: absolute; top: 12px; right: 12px; margin: 0; width: 40px; height: 40px; font-size: 20px;"><i class="fas fa-venus"></i></div>
+        <div class="dual-title-wrap">
+          <div class="dual-title">Girls Handball Team</div>
+          <div class="dual-sub">Age 10–22 · Girls Only</div>
+        </div>
+      </div>
+      <div class="dual-body">
+        <p class="dual-desc">Our Girls Team is a dedicated, empowering space for female players to grow as athletes and leaders. With a focus on agility, coordination, and competitive excellence, our girls program has produced multiple state-level achievers in a supportive, all-women environment.</p>
+        <ul class="dual-list">
+          <li><i class="ti ti-circle-check"></i> Female-focused coaching methodology</li>
+          <li><i class="ti ti-circle-check"></i> State & national competition exposure</li>
+          <li><i class="ti ti-circle-check"></i> Agility & speed specialization</li>
+          <li><i class="ti ti-circle-check"></i> Confidence & leadership building</li>
+          <li><i class="ti ti-circle-check"></i> Safe, inclusive environment</li>
+        </ul>
+      </div>
+      <div class="dual-footer">
+        <div class="dual-age">Age: <strong>10–22 years</strong> | <strong>Female Athletes</strong></div>
+        <a href="join.html" class="btn-enroll" style="font-size:12.5px;padding:8px 16px;background:#be185d;"><i class="ti ti-user-plus"></i> Join Team</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPECIAL PROGRAMS ── -->
+  <div class="section-label">
+    <div class="sl-line"></div>
+    <div class="sl-text">Special Programs</div>
+    <div class="sl-line"></div>
+  </div>
+
+  <!-- SUMMER CAMP -->
+  <div class="summer-card" data-category="special">
+    <div class="summer-bg">
+      <div class="summer-deco"></div>
+      <div class="summer-top">
+        <div>
+          <div class="summer-label"><i class="ti ti-sun"></i> Limited Seats — Summer 2025</div>
+          <div class="summer-title">Annual <span>Summer</span><br/>Handball Camp</div>
+          <p class="summer-desc">An immersive 21-day residential handball camp designed to fast-track skill development during summer break. Combining intensive court training, fitness conditioning, recreational activities, and team bonding in one unforgettable experience.</p>
+        </div>
+        <div class="summer-dates-box">
+          <h4>Camp Details</h4>
+          <div class="date-row"><i class="ti ti-calendar-event"></i> May 15 – June 5, 2025</div>
+          <div class="date-row"><i class="ti ti-clock"></i> 8 AM – 6 PM daily</div>
+          <div class="date-row"><i class="ti ti-users"></i> Age: 8–18 years</div>
+          <div class="date-row"><i class="ti ti-home"></i> Residential & Day options</div>
+          <div class="date-row"><i class="ti ti-ticket"></i> Seats: 40 only</div>
+          <a href="join.html" class="btn-enroll" style="margin-top:14px;width:100%;justify-content:center;background:var(--gold);color:var(--navy);"><i class="ti ti-bolt"></i> Register Now</a>
+        </div>
+      </div>
+      <div class="summer-features">
+        <div class="sf-item"><i class="ti ti-ball-handball"></i><span>Daily Court Training</span></div>
+        <div class="sf-item"><i class="ti ti-barbell"></i><span>Fitness & Strength Sessions</span></div>
+        <div class="sf-item"><i class="ti ti-trophy"></i><span>Mini Tournament Finals</span></div>
+        <div class="sf-item"><i class="ti ti-friends"></i><span>Team Bonding Activities</span></div>
+        <div class="sf-item"><i class="ti ti-salad"></i><span>Nutrition & Diet Guidance</span></div>
+        <div class="sf-item"><i class="ti ti-video"></i><span>Video Analysis Sessions</span></div>
+        <div class="sf-item"><i class="ti ti-certificate"></i><span>Merit Certificates</span></div>
+        <div class="sf-item"><i class="ti ti-shirt"></i><span>Academy Kit Included</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHOOL PROGRAM -->
+  <div class="school-card" data-category="special">
+    <div class="school-top">
+      <div class="school-info">
+        <div class="school-eyebrow"><i class="ti ti-school"></i> Partnership Program</div>
+        <h3>School Handball<br/>Integration Program</h3>
+        <p>We partner directly with schools across Varanasi to bring professional handball coaching to students on-campus. Our certified coaches visit partner schools weekly to conduct structured sessions aligned with the annual sports calendar — making handball accessible without travel or cost barriers.</p>
+        <div class="school-stats">
+          <div class="ss-item"><span class="ss-num">20+</span><span class="ss-label">Partner Schools</span></div>
+          <div class="ss-item"><span class="ss-num">3000+</span><span class="ss-label">Students Reached</span></div>
+          <div class="ss-item"><span class="ss-num">Weekly</span><span class="ss-label">Coach Visits</span></div>
+        </div>
+      </div>
+      <div class="school-visual">
+        <div class="school-visual-bg">
+          <i class="ti ti-school"></i>
+          <p>Bringing handball<br/>to every school</p>
+        </div>
+      </div>
+    </div>
+    <div class="school-deliverables">
+      <div class="sd-item">
+        <div class="sd-icon" style="background:#dbeafe;color:#1d4ed8;"><i class="ti ti-users"></i></div>
+        <div>
+          <h5>Certified Coaching</h5>
+          <p>Qualified coaches visit your school weekly</p>
+        </div>
+      </div>
+      <div class="sd-item">
+        <div class="sd-icon" style="background:#dcfce7;color:#15803d;"><i class="ti ti-certificate"></i></div>
+        <div>
+          <h5>Certifications</h5>
+          <p>Participation & merit certificates for students</p>
+        </div>
+      </div>
+      <div class="sd-item">
+        <div class="sd-icon" style="background:#fef9c3;color:#a16207;"><i class="ti ti-trophy"></i></div>
+        <div>
+          <h5>Inter-School Competitions</h5>
+          <p>Access to inter-school handball leagues</p>
+        </div>
+      </div>
+      <div class="sd-item">
+        <div class="sd-icon" style="background:#ede9fe;color:#6d28d9;"><i class="ti ti-chart-bar"></i></div>
+        <div>
+          <h5>Talent Identification</h5>
+          <p>Top performers invited for academy trials</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ELITE PROGRAMS ── -->
+  <div class="section-label">
+    <div class="sl-line"></div>
+    <div class="sl-text">Elite & Competitive</div>
+    <div class="sl-line"></div>
+  </div>
+
+  <!-- FITNESS & CONDITIONING -->
+  <div class="fitness-card" data-category="elite">
+    <div class="fitness-header">
+      <div class="fitness-icon"><i class="ti ti-barbell"></i></div>
+      <div class="fitness-header-text">
+        <h3>Fitness & Conditioning Program</h3>
+        <p>Science-backed athletic conditioning designed specifically for handball players — building explosive power, endurance, agility, and injury resilience across three core modules.</p>
+      </div>
+    </div>
+    <div class="fitness-body">
+      <div class="ft-module">
+        <div class="ft-module-icon fmi-red"><i class="ti ti-bolt"></i></div>
+        <h4>Strength & Power</h4>
+        <p>Periodized resistance training targeting explosive leg drive, throwing velocity, and core stability — the physical foundations of elite handball performance.</p>
+      </div>
+      <div class="ft-module">
+        <div class="ft-module-icon fmi-blue"><i class="ti ti-run"></i></div>
+        <h4>Speed & Agility</h4>
+        <p>Ladder drills, reactive agility cones, and plyometrics designed to improve first-step quickness, directional change, and court-specific movement efficiency.</p>
+      </div>
+      <div class="ft-module">
+        <div class="ft-module-icon fmi-green"><i class="ti ti-heart-rate-monitor"></i></div>
+        <h4>Endurance & Recovery</h4>
+        <p>Aerobic base building combined with active recovery protocols, flexibility work, and nutrition guidance to keep athletes performing at peak across full seasons.</p>
+      </div>
+    </div>
+    <div class="fitness-footer">
+      <div class="fitness-tags">
+        <span class="f-tag"><i class="ti ti-clock" style="font-size:13px;color:var(--navy)"></i> 6 sessions/week</span>
+        <span class="f-tag"><i class="ti ti-users" style="font-size:13px;color:var(--navy)"></i> Open to all enrolled athletes</span>
+        <span class="f-tag"><i class="ti ti-salad" style="font-size:13px;color:var(--navy)"></i> Nutrition plan included</span>
+        <span class="f-tag"><i class="ti ti-first-aid-kit" style="font-size:13px;color:var(--navy)"></i> Injury prevention protocol</span>
+      </div>
+      <a href="join.html" class="btn-enroll"><i class="ti ti-user-plus"></i> Join Program</a>
+    </div>
+  </div>
+
+  <!-- TOURNAMENT PREP -->
+  <div class="tourn-card" data-category="elite">
+    <div class="tourn-hero">
+      <div class="tourn-hero-inner">
+        <div>
+          <div class="tourn-eyebrow"><i class="ti ti-trophy"></i> Elite Competitive Track</div>
+          <div class="tourn-title">Tournament <span>Preparation</span><br/>Program</div>
+          <p class="tourn-desc">A focused, high-intensity program for athletes preparing for state, national, or inter-university handball competitions. Every aspect of preparation — physical, tactical, mental, and logistical — is covered under expert guidance.</p>
+        </div>
+        <div class="tourn-badge-stack">
+          <div class="tb"><i class="ti ti-map-pin"></i> State-level tournaments</div>
+          <div class="tb"><i class="ti ti-world"></i> National competitions</div>
+          <div class="tb"><i class="ti ti-school"></i> Inter-university events</div>
+          <div class="tb"><i class="ti ti-calendar"></i> 8-week intensive cycle</div>
+        </div>
+      </div>
+    </div>
+    <div class="tourn-phases">
+      <div class="tp-phase">
+        <div class="tp-num">01</div>
+        <h4>Assessment & Goal Setting</h4>
+        <p>Full physical & skill assessment. Tournament targets identified. Individual development plan built for each athlete.</p>
+      </div>
+      <div class="tp-phase">
+        <div class="tp-num">02</div>
+        <h4>Technical Refinement</h4>
+        <p>Deep-dive into positional skills, set plays, and match-specific technique using video analysis and feedback loops.</p>
+      </div>
+      <div class="tp-phase">
+        <div class="tp-num">03</div>
+        <h4>Team Strategy & Simulations</h4>
+        <p>Opponent scouting, formation drills, full-length match simulations, and real-time tactical adjustments.</p>
+      </div>
+      <div class="tp-phase">
+        <div class="tp-num">04</div>
+        <h4>Peak & Mental Readiness</h4>
+        <p>Taper training, sports psychology, pre-competition routines, and confidence-building for match day performance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Ready to Begin Your <span>Handball Journey?</span></h2>
+    <p>Join hundreds of athletes training at Shyama Handball Academy. Choose your program and take the first step toward becoming a champion.</p>
+    <div class="cta-btns">
+      <a href="join.html" class="btn-primary"><i class="ti ti-user-plus"></i> Enroll in a Program</a>
+      <a href="contact.html" class="btn-ghost"><i class="ti ti-phone"></i> Talk to a Coach</a>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+
+
+<script>
+  function filterCards(category, btn) {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('[data-category]');
+    const labels = document.querySelectorAll('.section-label');
+
+    if (category === 'all') {
+      cards.forEach(c => { c.style.display = ''; });
+      labels.forEach(l => { l.style.display = ''; });
+    } else {
+      const map = {
+        'foundation': ['foundation'],
+        'teams':      ['teams'],
+        'special':    ['special'],
+        'elite':      ['elite']
+      };
+      const allowed = map[category] || [];
+
+      cards.forEach(c => {
+        c.style.display = allowed.includes(c.dataset.category) ? '' : 'none';
+      });
+
+      // hide irrelevant section labels based on visible cards
+      document.querySelectorAll('.section-label').forEach(label => {
+        const next = label.nextElementSibling;
+        if (!next) return;
+        const hasVisible = [...label.parentElement.children].some((el, i, arr) => {
+          const idx = arr.indexOf(label);
+          if (i <= idx) return false;
+          const next2 = arr[i];
+          if (next2 && next2.classList.contains('section-label')) return false;
+          return next2 && next2.style.display !== 'none' && next2.dataset;
+        });
+        label.style.display = '';
+      });
+    }
+  }
+</script>
+
+
+<!-- Footer -->
+    <footer class="dark-footer-simple">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="assets/Logo/Shyama%20Handball%20Academy.png" alt="Shyama Handball Academy Logo" style="width: 50px; height: 50px; object-fit: contain; margin-right: 15px; border-radius: 50%; background: #fff; padding: 5px;">
+                    <h3 class="footer-title" style="margin-bottom: 0;">Shyama Handball Academy</h3>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 8765550245, 7084900009</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Us</h4>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-divider"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        <li><a href="coaches.html"><i class="fas fa-chevron-right"></i> Coaches</a></li>
+                        <li><a href="players.html"><i class="fas fa-chevron-right"></i> Players</a></li>
+                    </ul>
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="join.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-social-links">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom-simple">
             <p>&copy; 2026 Shyama Handball Academy. All rights reserved.</p>
         </div>
     </footer>
@@ -123,8 +1671,3 @@
     <script src="js/main.js?v=5"></script>
 </body>
 </html>
-
-
-
-
-

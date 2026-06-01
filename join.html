@@ -1,62 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyama Handball Academy | Join Academy</title>
+    <title>Join Academy — Shyama Handball Academy</title>
+    <meta name="description" content="Welcome to Shyama Handball Academy, Varanasi. Join us for premium handball training, professional coaching, and state-of-the-art facilities.">
     <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-    </style>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+/* Custom styles for Join Academy */
+.join-hero {
+    background: url('assets/Images/join_hero.png') no-repeat center 20%/cover;
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.join-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.9));
+}
+.jh-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 0 20px;
+}
+.jh-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+.jh-title span { color: var(--accent-color); }
+.jh-desc {
+    max-width: 650px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    font-size: 1.15rem;
+}
+
+/* Sections */
+.ja-section {
+    padding: 5rem 5%;
+    background: var(--primary-color);
+    color: var(--white);
+}
+.ja-section.alt {
+    background: #1e293b;
+}
+
+/* Form Styles - UPGRADED PREMIUM UI */
+.ja-form-container {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 3.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 600px) {
+    .ja-form-container { padding: 2rem 1.5rem; }
+}
+.ja-input-group {
+    margin-bottom: 1.8rem;
+}
+.ja-input-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.ja-input-group input, .ja-input-group select {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.ja-input-group input:focus, .ja-input-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+.btn-submit-premium {
+    background: linear-gradient(135deg, var(--accent-color), #d97706);
+    color: #fff;
+    padding: 16px 45px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.5);
+    text-transform: uppercase;
+}
+.btn-submit-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.7);
+}
+
+/* Fee Cards */
+.fee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.fee-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.fee-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    background: rgba(255,255,255,0.05);
+}
+.fee-card h3 {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.fee-price {
+    font-size: 3rem;
+    color: var(--accent-color);
+    font-weight: 800;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.fee-price span {
+    font-size: 1rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+.fee-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+.fee-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #cbd5e1;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.fee-features li i {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Process Timeline */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    position: relative;
+    margin-top: 3rem;
+}
+.process-step {
+    background: rgba(255,255,255,0.03);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.process-step:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.05);
+}
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-color), #d97706);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4);
+}
+
+/* Docs List */
+.docs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.doc-item {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 0 8px 8px 0;
+}
+.doc-item i {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+</style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader"><div class="spinner"></div></div>
-    <!-- Top Bar for Contact Info -->
+<!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi</span>
-        </div>
-        <div class="top-bar-right">
             <span><i class="fas fa-phone"></i> +91 8765550245, 7084900009</span>
             <span><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
         </div>
+        <div class="top-bar-right">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <span class="language-selector"><i class="fas fa-globe"></i> English <i class="fas fa-caret-down"></i></span>
+        </div>
     </div>
-
-    <!-- Header Section -->
-    <header class="top-header">
-        <div class="logo-left">
-            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo">
-        </div>
-        <div class="header-center">
-            <h1>Shyama Handball Academy</h1>
-            <p>Under the aegis of : S.N. Pandey Khel Sansthan Trust</p>
-        </div>
-        <div class="logo-right">
-            <img src="SN Pandey Handball Khel Sansthan Logo (1).png" alt="S.N. Pandey Trust Logo">
-        </div>
-    </header>
 
     <!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logos">
+            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo" class="logo-1">
+            <div class="vertical-divider"></div>
+            <span class="academy-name-text" style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 15px; white-space: nowrap; display: inline-block;">Shyama Handball Academy</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" >Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="training.html">Training Programs</a></li>
             <li><a href="coaches.html">Coaches & Staff</a></li>
@@ -68,77 +275,253 @@
         </ul>
     </nav>
 
-    <!-- Page Content -->
-    <section class="section" style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title">Join Shyama Handball Academy</h2>
-        <div class="card" style="text-align: left;">
-            <h3 style="margin-bottom: 20px;">Admission Inquiry Form</h3>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Player Name *</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="age">Age *</label>
-                    <input type="number" id="age" required>
-                </div>
-                <div class="form-group">
-                    <label for="experience">Experience Level</label>
-                    <select id="experience">
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
-                </div>
-                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Submit Registration Request</button>
-            </form>
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-                <h4>Required Documents for Admission:</h4>
-                <ul style="list-style: disc; padding-left: 20px; margin-top: 10px;">
-                    <li>2 Passport Size Photographs</li>
-                    <li>Age Proof (Aadhar Card / Birth Certificate)</li>
-                    <li>Medical Fitness Certificate</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<header class="join-hero">
+    <div class="jh-content">
+        <h1 class="jh-title">JOIN <span>ACADEMY</span></h1>
+        <p class="jh-desc">Your journey to becoming a professional handball player starts here. Enroll now and train with the best coaches in Varanasi.</p>
+    </div>
+</header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Shyama Handball Academy</h4>
-                <p style="margin-bottom: 10px;">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: var(--secondary-color);"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</p>
-                <p><i class="fas fa-phone" style="margin-right: 5px; color: var(--secondary-color);"></i> +91 8765550245, 7084900009</p>
+<!-- 1. Admission Process -->
+<section class="ja-section">
+    <div class="center-header">
+        <h2 class="section-title-center">ADMISSION <span class="gold-text">PROCESS</span></h2>
+        <div class="title-divider-gold-center"></div>
+        <p style="text-align: center; color: #cbd5e1; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Follow these simple steps to become a proud member of the Shyama Handball Academy.</p>
+    </div>
+    <div class="process-grid">
+        <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 style="color: var(--white); margin-bottom: 10px; font-size: 1.4rem;">Apply Online</h3>
+            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6;">Fill out the online registration form below with your accurate details.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 style="color: var(--white); margin-bottom: 10px; font-size: 1.4rem;">Trial & Evaluation</h3>
+            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6;">Attend a 2-day trial session for physical and tactical assessment by coaches.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 style="color: var(--white); margin-bottom: 10px; font-size: 1.4rem;">Document Review</h3>
+            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6;">Submit required documents and medical clearance at the academy office.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 style="color: var(--white); margin-bottom: 10px; font-size: 1.4rem;">Fee Payment</h3>
+            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6;">Complete the fee payment to officially secure your spot in the squad.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 2. Eligibility & 5. Documents Required -->
+<section class="ja-section alt">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem;">
+        <!-- Eligibility -->
+        <div>
+            <h2 style="color: var(--white); margin-bottom: 2rem; font-family: 'Montserrat', sans-serif; font-size: 2.2rem;">Basic <span class="gold-text">Eligibility</span></h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1.2rem; color: #e2e8f0; display: flex; gap: 15px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #22C55E; margin-top: 5px; font-size: 1.2rem;"></i> <span><strong>Age Limit:</strong> Must be between 10 and 22 years of age at the time of admission.</span></li>
+                <li style="margin-bottom: 1.2rem; color: #e2e8f0; display: flex; gap: 15px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #22C55E; margin-top: 5px; font-size: 1.2rem;"></i> <span><strong>Fitness:</strong> Must pass the academy's basic physical endurance test.</span></li>
+                <li style="margin-bottom: 1.2rem; color: #e2e8f0; display: flex; gap: 15px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #22C55E; margin-top: 5px; font-size: 1.2rem;"></i> <span><strong>Medical:</strong> Must provide a certified medical fitness certificate.</span></li>
+                <li style="margin-bottom: 1.2rem; color: #e2e8f0; display: flex; gap: 15px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #22C55E; margin-top: 5px; font-size: 1.2rem;"></i> <span><strong>Experience:</strong> Beginners to advanced players are welcome (Batches assigned accordingly).</span></li>
+            </ul>
+        </div>
+        
+        <!-- Documents -->
+        <div>
+            <h2 style="color: var(--white); margin-bottom: 2rem; font-family: 'Montserrat', sans-serif; font-size: 2.2rem;">Documents <span class="gold-text">Required</span></h2>
+            <div class="docs-list">
+                <div class="doc-item">
+                    <i class="fas fa-id-card"></i>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">Aadhar Card</strong>
+                        <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 5px;">Original & 2 Photocopies</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">Birth Certificate</strong>
+                        <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 5px;">Municipal Corporation Issued</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <i class="fas fa-notes-medical"></i>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">Medical Certificate</strong>
+                        <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 5px;">Signed by MBBS Doctor</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <i class="fas fa-images"></i>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">Passport Photos</strong>
+                        <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 5px;">4 Recent Color Photographs</p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="training.html"><i class="fas fa-angle-right"></i> Training Programs</a></li>
-                    <li><a href="join.html"><i class="fas fa-angle-right"></i> Admissions</a></li>
-                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Fee Structure -->
+<section class="ja-section">
+    <div class="center-header">
+        <h2 class="section-title-center">FEE <span class="gold-text">STRUCTURE</span></h2>
+        <div class="title-divider-gold-center"></div>
+        <p style="text-align: center; color: #cbd5e1; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Affordable, world-class training packages tailored for different age groups.</p>
+    </div>
+    
+    <div class="fee-grid">
+        <div class="fee-card">
+            <h3>Sub-Junior (U-14)</h3>
+            <div class="fee-price">₹1,500<span>/mo</span></div>
+            <ul class="fee-features">
+                <li><i class="fas fa-check"></i> 5 Days/Week Training</li>
+                <li><i class="fas fa-check"></i> Basic Fundamentals</li>
+                <li><i class="fas fa-check"></i> Inter-academy matches</li>
+                <li><i class="fas fa-check"></i> Free Academy T-shirt</li>
+            </ul>
+            <a href="#register" class="btn-gold" style="width: 100%; display: block; text-align: center; padding: 15px;">Select Plan</a>
+        </div>
+        <div class="fee-card" style="border-color: var(--accent-color); transform: scale(1.05); background: rgba(245, 158, 11, 0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+            <div style="background: var(--accent-color); color: #000; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px;">Most Popular</div>
+            <h3>Junior (U-19)</h3>
+            <div class="fee-price">₹2,500<span>/mo</span></div>
+            <ul class="fee-features">
+                <li><i class="fas fa-check"></i> 6 Days/Week Training</li>
+                <li><i class="fas fa-check"></i> Advanced Tactics & Strategy</li>
+                <li><i class="fas fa-check"></i> District & State Level Exposure</li>
+                <li><i class="fas fa-check"></i> Gym & Diet Plan Access</li>
+            </ul>
+            <a href="#register" class="btn-gold" style="width: 100%; display: block; text-align: center; padding: 15px;">Select Plan</a>
+        </div>
+        <div class="fee-card">
+            <h3>Senior Pro</h3>
+            <div class="fee-price">₹3,500<span>/mo</span></div>
+            <ul class="fee-features">
+                <li><i class="fas fa-check"></i> Daily Double Sessions</li>
+                <li><i class="fas fa-check"></i> National Tournament Prep</li>
+                <li><i class="fas fa-check"></i> 1-on-1 Mentorship</li>
+                <li><i class="fas fa-check"></i> Physiotherapy Support</li>
+            </ul>
+            <a href="#register" class="btn-gold" style="width: 100%; display: block; text-align: center; padding: 15px;">Select Plan</a>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Online Registration Form -->
+<section class="ja-section alt" id="register" style="position: relative; background: url('assets/Images/hero_banner_wide.png') no-repeat center center/cover;">
+    <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.9);"></div>
+    <div style="position: relative; z-index: 2;">
+        <div class="center-header">
+            <h2 class="section-title-center">ONLINE <span class="gold-text">REGISTRATION</span></h2>
+            <div class="title-divider-gold-center"></div>
+            <p style="text-align: center; color: #cbd5e1; max-width: 600px; margin: 0 auto; margin-bottom: 3rem; font-size: 1.1rem;">Fill out this form to reserve your spot. Our admin team will contact you within 24 hours.</p>
+        </div>
+        
+        <div class="ja-form-container">
+            <form>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="ja-input-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter player's full name" required>
+                    </div>
+                    <div class="ja-input-group">
+                        <label>Date of Birth</label>
+                        <input type="date" required style="color: #94a3b8;">
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="ja-input-group">
+                        <label>Contact Number</label>
+                        <input type="tel" placeholder="+91 xxxxx xxxxx" required>
+                    </div>
+                    <div class="ja-input-group">
+                        <label>Select Category</label>
+                        <select required style="color: #94a3b8;">
+                            <option value="" disabled selected>Choose a category</option>
+                            <option value="sub-junior">Sub-Junior (U-14)</option>
+                            <option value="junior">Junior (U-19)</option>
+                            <option value="senior">Senior Pro</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="ja-input-group">
+                    <label>Address</label>
+                    <input type="text" placeholder="Enter full residential address" required>
+                </div>
+                
+                <div class="ja-input-group">
+                    <label>Previous Experience (if any)</label>
+                    <input type="text" placeholder="e.g. Played at school level, none">
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button type="submit" class="btn-submit-premium">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Trial Session Booking -->
+<section class="ja-section" style="background: linear-gradient(rgba(200, 16, 46, 0.9), rgba(15, 23, 42, 0.95)), url('assets/Images/hero_handball.png') no-repeat center center/cover; padding: 6rem 5%; text-align: center;">
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); margin-bottom: 1rem; font-weight: 800;">NOT SURE YET? <span class="gold-text">BOOK A FREE TRIAL</span></h2>
+    <p style="color: #e2e8f0; max-width: 650px; margin: 0 auto 3rem; font-size: 1.15rem; line-height: 1.7;">Experience our coaching, interact with players, and get a feel of the court before making a commitment.</p>
+    <a href="contact.html" class="btn-submit-premium" style="display: inline-block; text-decoration: none;"><i class="far fa-calendar-check" style="margin-right: 10px;"></i> SCHEDULE A TRIAL</a>
+</section>
+
+
+<!-- Footer -->
+    <footer class="dark-footer-simple">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="assets/Logo/Shyama%20Handball%20Academy.png" alt="Shyama Handball Academy Logo" style="width: 50px; height: 50px; object-fit: contain; margin-right: 15px; border-radius: 50%; background: #fff; padding: 5px;">
+                    <h3 class="footer-title" style="margin-bottom: 0;">Shyama Handball Academy</h3>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 8765550245, 7084900009</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Us</h4>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-divider"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        <li><a href="coaches.html"><i class="fas fa-chevron-right"></i> Coaches</a></li>
+                        <li><a href="players.html"><i class="fas fa-chevron-right"></i> Players</a></li>
+                    </ul>
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="join.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-social-links">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom-simple">
             <p>&copy; 2026 Shyama Handball Academy. All rights reserved.</p>
         </div>
     </footer>
@@ -146,8 +529,3 @@
     <script src="js/main.js?v=5"></script>
 </body>
 </html>
-
-
-
-
-

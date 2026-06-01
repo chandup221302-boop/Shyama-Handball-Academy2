@@ -1,43 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyama Handball Academy | Players Corner</title>
+    <title>Players Corner — Shyama Handball Academy</title>
+    <meta name="description" content="Welcome to Shyama Handball Academy, Varanasi. Join us for premium handball training, professional coaching, and state-of-the-art facilities.">
     <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+/* Custom styles for Players Corner */
+.players-hero {
+    background: url('assets/Images/players_hero.png') no-repeat center center/cover;
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.players-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+}
+.ph-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+}
+.ph-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.ph-title span { color: var(--accent-color); }
+.ph-desc {
+    max-width: 600px;
+    margin: 1rem auto;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+/* Sections */
+.pc-section {
+    padding: 4rem 5%;
+    background: var(--primary-color);
+    color: var(--white);
+}
+.pc-section.alt {
+    background: #1e293b;
+}
+
+/* Grid Layouts */
+.pc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Cards */
+.pc-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.pc-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+.pc-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.pc-card p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Table */
+.pc-table-wrap {
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.pc-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.02);
+}
+.pc-table th, .pc-table td {
+    padding: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-align: left;
+    color: #e2e8f0;
+}
+.pc-table th {
+    background: rgba(0,0,0,0.2);
+    color: var(--accent-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+.pc-table tr:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+/* Profile specific */
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+}
+.stat-bar-bg {
+    background: rgba(255,255,255,0.1);
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+.stat-bar-fill {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+.btn-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    background: rgba(245, 158, 11, 0.05);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+.btn-outline:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+.notice-item {
+    padding: 1.2rem;
+    border-left: 4px solid var(--secondary-color);
+    background: rgba(255,255,255,0.03);
+    margin-bottom: 1.2rem;
+    border-radius: 0 6px 6px 0;
+}
+.notice-date {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+</style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader"><div class="spinner"></div></div>
-    <!-- Top Bar for Contact Info -->
+<!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi</span>
-        </div>
-        <div class="top-bar-right">
             <span><i class="fas fa-phone"></i> +91 8765550245, 7084900009</span>
             <span><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
         </div>
+        <div class="top-bar-right">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <span class="language-selector"><i class="fas fa-globe"></i> English <i class="fas fa-caret-down"></i></span>
+        </div>
     </div>
-
-    <!-- Header Section -->
-    <header class="top-header">
-        <div class="logo-left">
-            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo">
-        </div>
-        <div class="header-center">
-            <h1>Shyama Handball Academy</h1>
-            <p>Under the aegis of : S.N. Pandey Khel Sansthan Trust</p>
-        </div>
-        <div class="logo-right">
-            <img src="SN Pandey Handball Khel Sansthan Logo (1).png" alt="S.N. Pandey Trust Logo">
-        </div>
-    </header>
-
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logos">
+            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo" class="logo-1">
+            <div class="vertical-divider"></div>
+            <span class="academy-name-text" style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 15px; white-space: nowrap; display: inline-block;">Shyama Handball Academy</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -51,68 +215,261 @@
         </ul>
     </nav>
 
-    <!-- Page Content -->
-    <section class="section">
-        <h2 class="section-title">Players Corner</h2>
-        <div class="grid-3">
-            <div class="card">
-                <i class="fas fa-id-card card-icon"></i>
-                <h3>Player Login</h3>
-                <p>Access your profile, attendance records, and personalized training plans.</p>
-                <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 15px;">Login</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-calendar-alt card-icon"></i>
-                <h3>Practice Schedule</h3>
-                <p>View the weekly practice timings for different age groups and skill levels.</p>
-                <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 15px;">View Schedule</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-file-alt card-icon"></i>
-                <h3>Download Forms</h3>
-                <p>Get medical consent forms, tournament registration forms, and policy documents.</p>
-                <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 15px;">Downloads</a>
+<header class="players-hero">
+    <div class="ph-content">
+        <h1 class="ph-title">PLAYERS <span>CORNER</span></h1>
+        <p class="ph-desc">Your central hub for registration, profiles, schedules, stats, and everything you need to dominate on the court.</p>
+    </div>
+</header>
+
+<!-- 1. Player Registration -->
+<section class="pc-section">
+    <div class="center-header">
+        <span class="gold-subtitle-center" style="color: var(--accent-color); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Join The Academy</span>
+        <h2 class="section-title-center">PLAYER <span class="gold-text">REGISTRATION</span></h2>
+        <div class="title-divider-gold-center"></div>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto; color: #cbd5e1;">Take the first step towards becoming a champion. Register for the upcoming season to access world-class facilities and expert coaching.</p>
+    </div>
+    <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="#" class="btn-gold" style="padding: 15px 35px; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">REGISTER FOR 2026 SEASON</a>
+    </div>
+</section>
+
+<!-- 2. Player Profile & 3. Achievements -->
+<section class="pc-section alt">
+    <div class="pc-grid">
+        <!-- Profile -->
+        <div class="pc-card" style="text-align: center;">
+            <div class="profile-img">🧑🏽‍🦱</div>
+            <h3>Rahul Sharma</h3>
+            <p style="color: var(--white); margin-bottom: 0.5rem;"><strong>Position:</strong> Center Back</p>
+            <p style="color: var(--white); margin-bottom: 0.5rem;"><strong>Age Group:</strong> U-19</p>
+            <p style="color: var(--white);"><strong>Status:</strong> Active (Captain)</p>
+            <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0;">
+            <div style="text-align: left;">
+                <div style="margin-bottom: 1.2rem;">
+                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1;">Shot Accuracy (85%)</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 85%;"></div></div>
+                </div>
+                <div style="margin-bottom: 1.2rem;">
+                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1;">Speed & Agility (92%)</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 92%; background: var(--secondary-color);"></div></div>
+                </div>
+                <div>
+                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1;">Defense Rating (78%)</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 78%; background: #22C55E;"></div></div>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Achievements -->
+        <div class="pc-card">
+            <h3>Player Achievements</h3>
+            <p>Recent milestones and honors awarded to top academy players.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                <li style="margin-bottom: 1.5rem; display: flex; gap: 15px; align-items: flex-start;">
+                    <div style="font-size: 1.8rem; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">🏆</div>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">Best Attacker 2025</strong><br>
+                        <span style="font-size: 0.85rem; color: var(--accent-color);">State Championship</span>
+                    </div>
+                </li>
+                <li style="margin-bottom: 1.5rem; display: flex; gap: 15px; align-items: flex-start;">
+                    <div style="font-size: 1.8rem; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">🥇</div>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">Gold Medalist</strong><br>
+                        <span style="font-size: 0.85rem; color: var(--accent-color);">Inter-District Tournament 2024</span>
+                    </div>
+                </li>
+                <li style="display: flex; gap: 15px; align-items: flex-start;">
+                    <div style="font-size: 1.8rem; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">⭐</div>
+                    <div>
+                        <strong style="color: var(--white); font-size: 1.1rem;">MVP of the Month</strong><br>
+                        <span style="font-size: 0.85rem; color: var(--accent-color);">December 2024</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Shyama Handball Academy</h4>
-                <p style="margin-bottom: 10px;">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: var(--secondary-color);"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</p>
-                <p><i class="fas fa-phone" style="margin-right: 5px; color: var(--secondary-color);"></i> +91 8765550245, 7084900009</p>
+<!-- 4. Match Statistics -->
+<section class="pc-section">
+    <div class="center-header">
+        <h2 class="section-title-center">MATCH <span class="gold-text">STATISTICS</span></h2>
+        <div class="title-divider-gold-center"></div>
+        <p style="text-align: center; color: #cbd5e1; max-width: 600px; margin: 0 auto;">Live performance tracking across all major tournaments for the current season.</p>
+    </div>
+    <div class="pc-table-wrap">
+        <table class="pc-table">
+            <thead>
+                <tr>
+                    <th>Tournament</th>
+                    <th>Matches Played</th>
+                    <th>Goals Scored</th>
+                    <th>Assists</th>
+                    <th>Yellow Cards</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color: var(--white);">National Invitational 2025</strong></td>
+                    <td>5</td>
+                    <td><span style="color: var(--accent-color); font-weight: bold;">24</span></td>
+                    <td>12</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--white);">State League 2024</strong></td>
+                    <td>12</td>
+                    <td><span style="color: var(--accent-color); font-weight: bold;">55</span></td>
+                    <td>30</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--white);">Youth Cup 2024</strong></td>
+                    <td>4</td>
+                    <td><span style="color: var(--accent-color); font-weight: bold;">18</span></td>
+                    <td>8</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 5. Practice Schedule -->
+<section class="pc-section alt">
+    <div class="center-header">
+        <h2 class="section-title-center">PRACTICE <span class="gold-text">SCHEDULE</span></h2>
+        <div class="title-divider-gold-center"></div>
+    </div>
+    <div class="pc-table-wrap">
+        <table class="pc-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Morning Session</th>
+                    <th>Evening Session</th>
+                    <th>Core Focus Area</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color: var(--white);">Monday</strong></td>
+                    <td>06:00 AM - 08:00 AM</td>
+                    <td>04:30 PM - 07:00 PM</td>
+                    <td>Physical Conditioning & Stamina</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--white);">Tuesday</strong></td>
+                    <td>06:00 AM - 08:00 AM</td>
+                    <td>04:30 PM - 07:00 PM</td>
+                    <td>Attacking Strategies & Shooting</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--white);">Wednesday</strong></td>
+                    <td>06:00 AM - 08:00 AM</td>
+                    <td>04:30 PM - 07:00 PM</td>
+                    <td>Defensive Formations & Goalkeeping</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--white);">Thursday</strong></td>
+                    <td>06:00 AM - 08:00 AM</td>
+                    <td>04:30 PM - 07:00 PM</td>
+                    <td>Match Scenarios & Tactical Plays</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--white);">Friday</strong></td>
+                    <td><span style="color: #94a3b8; font-style: italic;">Rest</span></td>
+                    <td>04:30 PM - 07:00 PM</td>
+                    <td>Friendly Matches (Inter-squad)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 6. Attendance & Notices & 7. Download Forms -->
+<section class="pc-section">
+    <div class="pc-grid">
+        <!-- Notices -->
+        <div>
+            <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.5rem; font-family: 'Montserrat', sans-serif;">Alerts & <span class="gold-text">Notices</span></h3>
+            <div class="notice-item">
+                <div class="notice-date">10 Oct 2025</div>
+                <strong style="color: var(--white); font-size: 1.05rem;">Mandatory Kit Collection</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #cbd5e1;">All registered players must collect their new 2026 jerseys from the admin office by Friday. Bring your ID cards.</p>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="training.html"><i class="fas fa-angle-right"></i> Training Programs</a></li>
-                    <li><a href="join.html"><i class="fas fa-angle-right"></i> Admissions</a></li>
-                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+            <div class="notice-item">
+                <div class="notice-date">05 Oct 2025</div>
+                <strong style="color: var(--white); font-size: 1.05rem;">Diet Plan Update</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #cbd5e1;">The nutritionist has updated the pre-match meal guidelines. Please review them in the locker room board.</p>
+            </div>
+            <div class="notice-item" style="border-color: #22C55E; background: rgba(34, 197, 94, 0.05);">
+                <div class="notice-date" style="color: #22C55E;">Team Benchmark</div>
+                <strong style="color: var(--white); font-size: 1.05rem;">Minimum 80% Attendance Required</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #cbd5e1;">Ensure you maintain your daily practice logs to qualify for the upcoming National Invitational selection camp.</p>
+            </div>
+        </div>
+        
+        <!-- Downloads -->
+        <div>
+            <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.5rem; font-family: 'Montserrat', sans-serif;">Download <span class="gold-text">Forms</span></h3>
+            <p style="color: #cbd5e1; margin-bottom: 1.5rem;">Access essential documents and forms for academy players.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <a href="#" class="btn-outline"><i class="fas fa-file-pdf"></i> Season Registration Form 2026</a>
+                <a href="#" class="btn-outline"><i class="fas fa-file-medical"></i> Player Medical Clearance Form</a>
+                <a href="#" class="btn-outline"><i class="fas fa-file-signature"></i> Parental Consent Form</a>
+                <a href="#" class="btn-outline"><i class="fas fa-gavel"></i> Code of Conduct Agreement</a>
+                <a href="#" class="btn-outline"><i class="fas fa-graduation-cap"></i> Scholarship Application Form</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="dark-footer-simple">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="assets/Logo/Shyama%20Handball%20Academy.png" alt="Shyama Handball Academy Logo" style="width: 50px; height: 50px; object-fit: contain; margin-right: 15px; border-radius: 50%; background: #fff; padding: 5px;">
+                    <h3 class="footer-title" style="margin-bottom: 0;">Shyama Handball Academy</h3>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 8765550245, 7084900009</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Us</h4>
-                <ul>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-links">
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training Programs</a></li>
+                    <li><a href="join.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-social-links">
                     <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
                     <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
                     <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom-simple">
             <p>&copy; 2026 Shyama Handball Academy. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
-
-
-
-
-

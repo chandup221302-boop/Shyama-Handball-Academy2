@@ -13,33 +13,27 @@
     <!-- Preloader -->
     <div id="preloader"><div class="spinner"></div></div>
 
-    <!-- Top Bar for Contact Info -->
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi</span>
-        </div>
-        <div class="top-bar-right">
             <span><i class="fas fa-phone"></i> +91 8765550245, 7084900009</span>
             <span><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
         </div>
+        <div class="top-bar-right">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <span class="language-selector"><i class="fas fa-globe"></i> English <i class="fas fa-caret-down"></i></span>
+        </div>
     </div>
-
-    <!-- Header Section -->
-    <header class="top-header">
-        <div class="logo-left">
-            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo">
-        </div>
-        <div class="header-center">
-            <h1>Shyama Handball Academy</h1>
-            <p>Under the aegis of : S.N. Pandey Khel Sansthan Trust</p>
-        </div>
-        <div class="logo-right">
-            <img src="SN Pandey Handball Khel Sansthan Logo (1).png" alt="S.N. Pandey Trust Logo">
-        </div>
-    </header>
 
     <!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logos">
+            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo" class="logo-1">
+            <div class="vertical-divider"></div>
+            <span class="academy-name-text" style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 15px; white-space: nowrap; display: inline-block;">Shyama Handball Academy</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -53,270 +47,809 @@
         </ul>
     </nav>
 
-    <!-- Hero Banner -->
-    <section class="hero">
+    <!-- Hero Banner Slider -->
+    <section class="hero-slider-section">
+        <div class="hero-slider-container">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="assets/Videos/Hero Video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="assets/Videos/Hero Video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="assets/Videos/Hero Video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- Static Overlay & Content -->
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2>Passion for Handball. Excellence in Training.</h2>
+            <h1>Shyama Handball Academy</h1>
             <p>Join Varanasi's premier handball academy and take your game to the next level.</p>
-            <a href="join.html" class="btn">Join Now</a>
+        </div>
+
+        <!-- Dots -->
+        <div class="hero-dots-container">
+            <span class="hero-dot active" data-index="0"></span>
+            <span class="hero-dot" data-index="1"></span>
+            <span class="hero-dot" data-index="2"></span>
         </div>
     </section>
 
-    <!-- Academy Introduction -->
-    <section class="section about-intro">
-        <h2 class="section-title">Welcome to Our Academy</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>At Shyama Handball Academy, we are dedicated to fostering talent, discipline, and sportsmanship. Guided by experienced professionals, we provide top-tier facilities and a competitive environment to help athletes reach their full potential in handball.</p>
+    <!-- Academy Introduction (Featured Programs Style) -->
+    <section class="section light-section">
+        <div class="center-header">
+            <span class="gold-subtitle-center">ACADEMY HIGHLIGHTS</span>
+            <h2 class="section-title-center">WELCOME TO <span class="gold-text">OUR ACADEMY</span></h2>
+            <div class="title-divider-gold-center"></div>
+            <p class="center-desc" style="max-width: 800px;">Dedicated grassroots initiatives driving athletic mastery, corporate collaborations, and youth leadership in the sport of handball.</p>
         </div>
-    </section>
-
-    <!-- Training Highlights -->
-    <section class="section">
-        <h2 class="section-title">Training Highlights</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-image-container">
-                    <img src="assets/training_1.png" alt="Beginner Programs" class="card-img">
+        
+        <div class="grid-5 impact-grid">
+            <!-- Card 1 -->
+            <div class="impact-card">
+                <img src="assets/Images/training_1.png" alt="Handball Coaching">
+                <div class="impact-card-content">
+                    <span class="category">ATHLETIC CORE</span>
+                    <h3>Handball Coaching</h3>
+                    <p>Professional training leagues under national-level coaches for junior and senior levels.</p>
                 </div>
-                <h3>Beginner Programs</h3>
-                <p>Learn the fundamentals of handball with specialized youth programs.</p>
             </div>
-            <div class="card">
-                <div class="card-image-container">
-                    <img src="assets/training_2.png" alt="Advanced Conditioning" class="card-img">
+            
+            <!-- Card 2 -->
+            <div class="impact-card">
+                <img src="assets/Images/training_2.png" alt="State Tournaments">
+                <div class="impact-card-content">
+                    <span class="category">COMPETITIONS</span>
+                    <h3>State Tournaments</h3>
+                    <p>Organizing annual tournaments under sports federations to provide competitive experience.</p>
                 </div>
-                <h3>Advanced Conditioning</h3>
-                <p>Intensive fitness and tactical training for competitive players.</p>
             </div>
-            <div class="card">
-                <div class="card-image-container">
-                    <img src="assets/training_1.png" alt="Tournament Prep" class="card-img">
+            
+            <!-- Card 3 -->
+            <div class="impact-card">
+                <img src="assets/Images/hero_handball.png" alt="Village Sports Camps">
+                <div class="impact-card-content">
+                    <span class="category">COMMUNITY OUTREACH</span>
+                    <h3>Village Sports Camps</h3>
+                    <p>7-day intensive coaching bootcamps in remote locations supplying free handball kits.</p>
                 </div>
-                <h3>Tournament Prep</h3>
-                <p>Strategic preparation and match practice for state and national events.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Achievements & Awards -->
-    <section class="section" style="background-color: var(--white);">
-        <h2 class="section-title">Achievements & Awards</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-image-container">
-                    <img src="assets/training_2.png" alt="State Champions" class="card-img">
+            
+            <!-- Card 4 -->
+            <div class="impact-card">
+                <img src="assets/Images/hero_banner_wide.png" alt="Educational Support">
+                <div class="impact-card-content">
+                    <span class="category">EMPOWERMENT</span>
+                    <h3>Educational Support</h3>
+                    <p>Offering scholarships, books, and study aids to ensure zero educational drops.</p>
                 </div>
-                <h3>State Champions</h3>
-                <p>Winners of the 2025 Uttar Pradesh State Handball Championship (U-19 Boys).</p>
             </div>
-            <div class="card">
-                <div class="card-image-container">
-                    <img src="assets/training_1.png" alt="Best Academy" class="card-img">
+            
+            <!-- Card 5 -->
+            <div class="impact-card">
+                <img src="assets/Images/training_1.png" alt="CSR Partnerships">
+                <div class="impact-card-content">
+                    <span class="category">ALLIANCES</span>
+                    <h3>CSR Partnerships</h3>
+                    <p>Collaborating with companies to sponsor athletic grounds and clean water setups.</p>
                 </div>
-                <h3>Best Academy</h3>
-                <p>Awarded "Best Sports Academy in Varanasi" by the District Sports Association.</p>
-            </div>
-            <div class="card">
-                <div class="card-image-container">
-                    <img src="assets/training_2.png" alt="National Players" class="card-img">
-                </div>
-                <h3>National Players</h3>
-                <p>Proudly produced 5 national-level players who represented the state team.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Upcoming Events -->
-    <section class="section">
-        <h2 class="section-title">Upcoming Events</h2>
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div class="card" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; padding: 20px;">
-                <div style="text-align: left;">
-                    <h3 style="margin-bottom: 5px;">Summer Training Camp</h3>
-                    <p style="color: #64748b;"><i class="far fa-calendar-alt"></i> Starts June 1, 2026</p>
-                </div>
-                <a href="join.html" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Register</a>
-            </div>
-            <div class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 20px;">
-                <div style="text-align: left;">
-                    <h3 style="margin-bottom: 5px;">Inter-Academy Tournament</h3>
-                    <p style="color: #64748b;"><i class="far fa-calendar-alt"></i> August 15-20, 2026</p>
-                </div>
-                <a href="events.html" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Details</a>
             </div>
         </div>
     </section>
 
-    <!-- Coaches Details -->
-    <section class="section" style="background-color: var(--light-bg);">
-        <h2 class="section-title">Meet Our Expert Coaches</h2>
-        <div class="grid-3">
-            <div class="coach-card">
-                <img src="https://ui-avatars.com/api/?name=Ajay+Pandey&background=0D8ABC&color=fff&size=150" alt="Head Coach" class="coach-img">
-                <h3>Ajay Pandey</h3>
-                <p class="role">Head Coach (Ex-National Player)</p>
-                <p>Over 15 years of experience in grooming young talents and building championship-winning teams.</p>
-            </div>
-            <div class="coach-card">
-                <img src="https://ui-avatars.com/api/?name=Vikram+Singh&background=1e293b&color=fff&size=150" alt="Tactical Coach" class="coach-img">
-                <h3>Vikram Singh</h3>
-                <p class="role">Tactical & Strategy Coach</p>
-                <p>Specializes in advanced game strategies, defensive formations, and match analysis.</p>
-            </div>
-            <div class="coach-card">
-                <img src="https://ui-avatars.com/api/?name=Neha+Sharma&background=dc2626&color=fff&size=150" alt="Fitness Coach" class="coach-img">
-                <h3>Neha Sharma</h3>
-                <p class="role">Strength & Conditioning</p>
-                <p>Ensures our athletes maintain peak physical fitness, agility, and injury prevention.</p>
-            </div>
+    <!-- Section 1: About the Academy (Built for Champions) -->
+    <section class="section dark-section">
+        <div class="center-header">
+            <span class="gold-subtitle-center">ABOUT THE ACADEMY</span>
+            <h2 class="section-title-center">BUILT FOR <span class="gold-text">CHAMPIONS</span></h2>
+            <div class="title-divider-gold-center"></div>
         </div>
-    </section>
-
-    <!-- Photo Gallery Slider -->
-    <section class="section">
-        <h2 class="section-title">Academy Gallery</h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-btn left-btn"><i class="fas fa-chevron-left"></i></button>
-            <div class="slider-container">
-                <div class="gallery-item">
-                    <img src="assets/training_1.png" alt="Training Session">
-                    <div class="gallery-caption">Training Session</div>
+        <div class="grid-2-col">
+            <!-- Left Side -->
+            <div class="about-left">
+                
+                <p class="dark-section-desc">
+                    Elite Handball Academy has been a beacon of sporting excellence since 2012. We combine world-class coaching methodology with state-of-the-art facilities to develop players at every level — from beginners to national competitors.
+                </p>
+                <p class="dark-section-desc" style="margin-bottom: 30px;">
+                    Our holistic approach integrates technical skill, tactical intelligence, physical conditioning, and mental resilience to produce complete athletes who excel on every court.
+                </p>
+                
+                <div class="feature-list-grid">
+                    <div class="feature-item"><span class="gold-dot"></span> Professional-grade indoor courts</div>
+                    <div class="feature-item"><span class="gold-dot"></span> National & state certified coaches</div>
+                    <div class="feature-item"><span class="gold-dot"></span> Age-group specific programs</div>
+                    <div class="feature-item"><span class="gold-dot"></span> Video analysis & tech support</div>
+                    <div class="feature-item"><span class="gold-dot"></span> Nutrition & fitness guidance</div>
+                    <div class="feature-item"><span class="gold-dot"></span> Scholarship opportunities</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/training_2.png" alt="Match Day">
-                    <div class="gallery-caption">Match Day</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/training_1.png" alt="Stadium View">
-                    <div class="gallery-caption">Stadium View</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/training_2.png" alt="Team Celebration">
-                    <div class="gallery-caption">Team Celebration</div>
-                </div>
+                
+                <a href="training.html" class="btn-gold">EXPLORE PROGRAMS</a>
             </div>
-            <button class="carousel-btn right-btn"><i class="fas fa-chevron-right"></i></button>
-            <div class="carousel-dots"></div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section" style="background-color: var(--primary-color); color: white;">
-        <h2 class="section-title" style="color: white;">What People Say</h2>
-        <div class="carousel-wrapper" style="padding: 0 40px;">
-            <button class="carousel-btn left-btn" style="left: -10px;"><i class="fas fa-chevron-left"></i></button>
-            <div class="slider-container" style="padding-bottom: 20px;">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://ui-avatars.com/api/?name=Rajesh+Kumar&background=0D8ABC&color=fff" alt="Rajesh Kumar" class="testimonial-img">
-                        <div class="testimonial-author">
-                            <h4>Rajesh Kumar</h4>
-                            <span>Parent</span>
+            
+            <!-- Right Side -->
+            <div class="about-right">
+                <div class="mission-card">
+                    <div class="mission-header">
+                        <div class="medal-icon">🏅</div>
+                        <h3>OUR MISSION</h3>
+                        <p>To nurture athletic potential, instill discipline, and build future handball champions who represent their region and country with pride on every stage.</p>
+                    </div>
+                    
+                    <div class="batch-grid">
+                        <div class="batch-card">
+                            <h4>U-12</h4>
+                            <span>JUNIOR BATCH</span>
+                        </div>
+                        <div class="batch-card">
+                            <h4>U-17</h4>
+                            <span>YOUTH BATCH</span>
+                        </div>
+                        <div class="batch-card">
+                            <h4>U-21</h4>
+                            <span>SENIOR BATCH</span>
+                        </div>
+                        <div class="batch-card">
+                            <h4>OPEN</h4>
+                            <span>ELITE SQUAD</span>
                         </div>
                     </div>
-                    <p>"The best handball coaching in Varanasi. My son has improved tremendously under their guidance. The facilities are top-notch and the coaches really care about the players."</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://ui-avatars.com/api/?name=Amit+Singh&background=dc2626&color=fff" alt="Amit Singh" class="testimonial-img">
-                        <div class="testimonial-author">
-                            <h4>Amit Singh</h4>
-                            <span>Local Sports Enthusiast</span>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Training Highlights -->
+    <section class="section light-section">
+        <div class="center-header">
+            <span class="gold-subtitle-center">TRAINING PROGRAMS</span>
+            <h2 class="section-title-center">TRAINING <span class="gold-text">HIGHLIGHTS</span></h2>
+            <div class="title-divider-gold-center"></div>
+            <p class="center-desc">Our structured training curriculum is designed to develop every facet of a handball player — from raw skill to championship mentality.</p>
+        </div>
+        
+        <div class="grid-6">
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/training_1.png" alt="Skill Mastery" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">01</div>
+                    <h4>Technical Skill Mastery</h4>
+                    <p>Passing, dribbling, shooting mechanics – perfected through repetition drills, shadow play, and real-match simulations with immediate feedback.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/training_2.png" alt="Tactical Intelligence" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">02</div>
+                    <h4>Tactical Intelligence</h4>
+                    <p>Game IQ development, positional awareness, and team strategy. Players learn to read the court and make split-second decisions under pressure.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/hero_handball.png" alt="Physical Conditioning" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">03</div>
+                    <h4>Physical Conditioning</h4>
+                    <p>Sport-specific fitness: explosive speed, endurance, agility, and strength training tailored to age groups and competitive demands.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/training_1.png" alt="Goalkeeper Excellence" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">04</div>
+                    <h4>Goalkeeper Excellence</h4>
+                    <p>Dedicated goalkeeper sessions covering positioning, reflex training, distribution, and the psychological demands of the last line of defence.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/training_2.png" alt="Video Data Analysis" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">05</div>
+                    <h4>Video & Data Analysis</h4>
+                    <p>Match footage breakdowns, performance metrics tracking, and personalised reports help athletes understand and accelerate their development.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/hero_handball.png" alt="Mental Toughness" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">06</div>
+                    <h4>Mental Toughness</h4>
+                    <p>Visualisation, pressure simulation, and resilience coaching to ensure athletes perform at their peak in high-stakes championship moments.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/training_1.png" alt="Nutrition Planning" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">07</div>
+                    <h4>Nutrition Planning</h4>
+                    <p>Customised dietary regimes and hydration plans crafted by certified sports nutritionists to ensure peak match-day performance.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img-container">
+                    <img src="assets/Images/training_2.png" alt="Injury Prevention" class="highlight-img">
+                </div>
+                <div class="highlight-content">
+                    <div class="card-number">08</div>
+                    <h4>Injury Prevention</h4>
+                    <p>Proactive physical therapy, recovery sessions, and biomechanical corrections designed to maximize player longevity and health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Achievements & Awards -->
+    <section class="section dark-section-alt">
+        <div class="center-header">
+            <span class="gold-subtitle-center">OUR RECORD</span>
+            <h2 class="section-title-center">ACHIEVEMENTS <span class="gold-text">& AWARDS</span></h2>
+            <div class="title-divider-gold-center"></div>
+        </div>
+        <div class="grid-4 stat-grid">
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/training_2.png" alt="Titles" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>48</h3>
+                    <p>CHAMPIONSHIP TITLES</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/training_1.png" alt="Players" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>20+</h3>
+                    <p>NATIONAL PLAYERS</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/hero_handball.png" alt="Medals" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>150+</h3>
+                    <p>MEDALS WON</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/training_2.png" alt="Years" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>12</h3>
+                    <p>YEARS OF EXCELLENCE</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/training_1.png" alt="Coaches" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>15+</h3>
+                    <p>CERTIFIED COACHES</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/hero_handball.png" alt="Tours" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>10+</h3>
+                    <p>INTERNATIONAL TOURS</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/training_2.png" alt="Alumni" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>500+</h3>
+                    <p>SUCCESSFUL ALUMNI</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-img-container">
+                    <img src="assets/Images/training_1.png" alt="Facilities" class="stat-img">
+                </div>
+                <div class="stat-content">
+                    <h3>3</h3>
+                    <p>INDOOR ARENAS</p>
+                </div>
+            </div>
+        </div>
+        <div class="award-highlight">
+            <h3>"BEST HANDBALL ACADEMY – NORTH INDIA 2023"</h3>
+            <p>Awarded by the Sports Authority of India at the National Sports Excellence Conclave, New Delhi</p>
+        </div>
+    </section>
+
+    <!-- Section 4: Upcoming Events -->
+    <section class="section light-section">
+        <div class="gallery-header-container">
+            <div class="center-header" style="text-align: left; margin-bottom: 0;">
+                <span class="gold-subtitle-center" style="text-align: left;">CALENDAR</span>
+                <h2 class="section-title-center">UPCOMING <span class="gold-text">EVENTS</span></h2>
+                <div class="title-divider-gold-center" style="margin: 0 0 20px 0;"></div>
+            </div>
+            <div>
+                <a href="events.html" class="btn-outline-white" style="color: #0f172a; border-color: #0f172a;">VIEW ALL EVENTS</a>
+            </div>
+        </div>
+        
+        <div class="events-list">
+            <!-- Event 1 -->
+            <div class="event-row">
+                <div class="event-date">
+                    <span class="date-num text-gold">14</span>
+                    <span class="date-month">JUN 2025</span>
+                </div>
+                <div class="event-details">
+                    <h4>🥅 Inter-District Handball Championship</h4>
+                    <p>📍 Indoor Stadium, Varanasi | ⏰ 8:00 AM - 6:00 PM | U-17 & U-21 Categories</p>
+                </div>
+                <div class="event-status">
+                    <a href="join.html" class="status-tag tag-green-outline" style="text-decoration: none; display: inline-block; padding: 8px 20px; font-weight: 700;">Registration Form</a>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="event-row">
+                <div class="event-date">
+                    <span class="date-num text-gold">22</span>
+                    <span class="date-month">JUN 2025</span>
+                </div>
+                <div class="event-details">
+                    <h4>🏃 Summer Intensive Training Camp</h4>
+                    <p>📍 Elite Handball Academy Grounds | ⏰ 6:00 AM - 9:00 AM | All Age Groups</p>
+                </div>
+                <div class="event-status">
+                    <a href="join.html" class="status-tag tag-green-outline" style="text-decoration: none; display: inline-block; padding: 8px 20px; font-weight: 700;">Registration Form</a>
+                </div>
+            </div>
+            
+            <!-- Event 3 -->
+            <div class="event-row">
+                <div class="event-date">
+                    <span class="date-num text-gold">05</span>
+                    <span class="date-month">JUL 2025</span>
+                </div>
+                <div class="event-details">
+                    <h4>🏆 State Selection Trials – U-21</h4>
+                    <p>📍 Sports Complex, Lucknow | ⏰ 9:00 AM - 5:00 PM | Registered Players Only</p>
+                </div>
+                <div class="event-status">
+                    <a href="join.html" class="status-tag tag-green-outline" style="text-decoration: none; display: inline-block; padding: 8px 20px; font-weight: 700;">Registration Form</a>
+                </div>
+            </div>
+            
+            <!-- Event 4 -->
+            <div class="event-row">
+                <div class="event-date">
+                    <span class="date-num text-gold">18</span>
+                    <span class="date-month">JUL 2025</span>
+                </div>
+                <div class="event-details">
+                    <h4>🎓 Annual Prize Distribution Ceremony</h4>
+                    <p>📍 Academy Auditorium | ⏰ 4:00 PM onwards | All Students & Parents</p>
+                </div>
+                <div class="event-status">
+                    <a href="join.html" class="status-tag tag-green-outline" style="text-decoration: none; display: inline-block; padding: 8px 20px; font-weight: 700;">Registration Form</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Meet The Coaches -->
+    <section class="section dark-section">
+        <div class="center-header">
+            <span class="gold-subtitle-center">OUR TEAM</span>
+            <h2 class="section-title-center">MEET THE <span class="gold-text">COACHES</span></h2>
+            <div class="title-divider-gold-center"></div>
+            <p class="center-desc">World-class mentors, certified trainers, and former champions — dedicated to shaping your game and your future.</p>
+        </div>
+        
+        <div class="grid-4 coach-grid">
+            <!-- Coach 1 -->
+            <div class="coach-dark-card">
+                <div class="coach-circle circle-gold">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Rajesh Kumar" class="coach-img">
+                </div>
+                <div class="coach-info">
+                    <h3>Rajesh Kumar</h3>
+                    <span class="coach-role">HEAD COACH & DIRECTOR</span>
+                    <p>Former Indian National Team player with 14 years of coaching experience. Three-time State Championship winning coach and HAI certified Level 3 trainer.</p>
+                </div>
+                <div class="coach-stats">
+                    <div class="stat-col">
+                        <h4>14</h4>
+                        <span>YRS COACHING</span>
                     </div>
-                    <p>"Excellent facilities and dedicated coaches. A true blessing for aspiring athletes in our region. I've seen many local kids transform into professional players here."</p>
+                    <div class="stat-col">
+                        <h4>3×</h4>
+                        <span>STATE CHAMPION</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>L3</h4>
+                        <span>HAI CERTIFIED</span>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Coach 2 -->
+            <div class="coach-dark-card">
+                <div class="coach-circle circle-red">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Priya Sharma" class="coach-img">
+                </div>
+                <div class="coach-info">
+                    <h3>Priya Sharma</h3>
+                    <span class="coach-role">WOMEN'S TEAM HEAD COACH</span>
+                    <p>National-level women's handball champion. Specialises in tactical formations and has led our women's squad to 5 consecutive state titles.</p>
+                </div>
+                <div class="coach-stats">
+                    <div class="stat-col">
+                        <h4>10</h4>
+                        <span>YRS COACHING</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>5×</h4>
+                        <span>STATE TITLES</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>200+</h4>
+                        <span>PLAYERS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coach 3 -->
+            <div class="coach-dark-card">
+                <div class="coach-circle circle-yellow">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Amit Singh" class="coach-img">
+                </div>
+                <div class="coach-info">
+                    <h3>Amit Singh</h3>
+                    <span class="coach-role">FITNESS & CONDITIONING COACH</span>
+                    <p>BSc Sports Science, certified strength & conditioning specialist. Develops explosive athleticism and injury-prevention protocols for all age groups.</p>
+                </div>
+                <div class="coach-stats">
+                    <div class="stat-col">
+                        <h4>8</h4>
+                        <span>YRS EXPERIENCE</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>NSCA</h4>
+                        <span>CERTIFIED</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>0</h4>
+                        <span>INJURIES</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coach 4 -->
+            <div class="coach-dark-card">
+                <div class="coach-circle circle-green">
+                    <img src="https://i.pravatar.cc/150?img=8" alt="Vikram Thakur" class="coach-img">
+                </div>
+                <div class="coach-info">
+                    <h3>Vikram Thakur</h3>
+                    <span class="coach-role">GOALKEEPER SPECIALIST</span>
+                    <p>Former state champion goalkeeper with 6 years dedicated to developing elite goalkeepers. Known for intense reflex and positioning methodology.</p>
+                </div>
+                <div class="coach-stats">
+                    <div class="stat-col">
+                        <h4>6</h4>
+                        <span>YRS SPECIALTY</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>40+</h4>
+                        <span>GOALKEEPERS</span>
+                    </div>
+                    <div class="stat-col">
+                        <h4>L2</h4>
+                        <span>CERTIFIED</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Photo Gallery (Moments) -->
+    <section class="light-section">
+        <div class="center-header">
+            <span class="gold-subtitle-center">MOMENTS</span>
+            <h2 class="section-title-center">PHOTO <span class="gold-text">GALLERY</span></h2>
+            <div class="title-divider-gold-center"></div>
+            <a href="gallery.html" class="btn-outline-white" style="color: #0f172a; border-color: #0f172a; margin-top: 15px; display: inline-block;">VIEW ALL PHOTOS</a>
+        </div>
+
+        <div class="bento-gallery">
+            <div class="bento-item item-1">
+                <img src="assets/Images/hero_handball.png" alt="Match Action" class="bento-bg-img">
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <span>MATCH ACTION</span>
+                </div>
+            </div>
+            <div class="bento-item item-2">
+                <img src="assets/Images/training_1.png" alt="Training Session" class="bento-bg-img">
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <span>TRAINING SESSION</span>
+                </div>
+            </div>
+            <div class="bento-item item-3">
+                <img src="assets/Images/training_2.png" alt="Trophy Ceremony" class="bento-bg-img">
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <span>TROPHY CEREMONY</span>
+                </div>
+            </div>
+            <div class="bento-item item-4">
+                <img src="assets/Images/training_1.png" alt="Award Night" class="bento-bg-img">
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <span>AWARD NIGHT</span>
+                </div>
+            </div>
+            <div class="bento-item item-5">
+                <img src="assets/Images/hero_handball.png" alt="Team Photo" class="bento-bg-img">
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <span>TEAM PHOTO</span>
+                </div>
+            </div>
+            <div class="bento-item item-6">
+                <img src="assets/Images/training_2.png" alt="Shooting Drill" class="bento-bg-img">
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <span>SHOOTING DRILL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Testimonials -->
+    <section class="dark-section-alt">
+        <div class="center-header">
+            <span class="gold-subtitle-center">WHAT THEY SAY</span>
+            <h2 class="section-title-center">TESTIMONIALS</h2>
+            <div class="title-divider-gold-center"></div>
+        </div>
+
+        <div class="testimonial-carousel-wrapper">
+            <button class="carousel-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonial-carousel" id="testimonialSlider">
+                <!-- Testimonial 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=f59e0b&color=fff" alt="Priya Patel" class="testimonial-img">
-                        <div class="testimonial-author">
-                            <h4>Priya Patel</h4>
+                        <div class="author-circle circle-bg-yellow">PP</div>
+                        <div class="author-info">
+                            <h5 class="text-gold">Priya Patel</h5>
                             <span>State Level Player</span>
                         </div>
                     </div>
                     <p>"Joining Shyama Handball Academy was the best decision of my career. The advanced tactical training prepared me perfectly for the national tournaments."</p>
                 </div>
+
+                <!-- Testimonial 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=10b981&color=fff" alt="Rahul Sharma" class="testimonial-img">
-                        <div class="testimonial-author">
-                            <h4>Rahul Sharma</h4>
+                        <div class="author-circle circle-bg-green">RS</div>
+                        <div class="author-info">
+                            <h5 class="text-gold">Rahul Sharma</h5>
                             <span>School Team Captain</span>
                         </div>
                     </div>
                     <p>"The coaches focus on both physical endurance and mental toughness. This academy has not only made me a better player but also a disciplined student."</p>
                 </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-circle circle-bg-red">AK</div>
+                        <div class="author-info">
+                            <h5 class="text-gold">Arjun Kaushik</h5>
+                            <span>State U-21 Player</span>
+                        </div>
+                    </div>
+                    <p>"Within 18 months I went from a school-level player to representing the state. Coach Rajesh's methods are unlike anything I've experienced."</p>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-circle circle-bg-yellow">MM</div>
+                        <div class="author-info">
+                            <h5 class="text-gold">Meena Mishra</h5>
+                            <span>Parent of U-14 Athlete</span>
+                        </div>
+                    </div>
+                    <p>"As a parent I was worried about my daughter's time, but the discipline and confidence she has gained here is priceless. The coaches genuinely care."</p>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-circle circle-bg-green">SP</div>
+                        <div class="author-info">
+                            <h5 class="text-gold">Suresh Pandey</h5>
+                            <span>Elite Squad</span>
+                        </div>
+                    </div>
+                    <p>"The video analysis sessions alone are worth the fee. I never understood my own weaknesses until I saw myself on screen. Highly recommended!"</p>
+                </div>
             </div>
-            <button class="carousel-btn right-btn" style="right: -10px;"><i class="fas fa-chevron-right"></i></button>
+            
+            <button class="carousel-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
+        
+        <!-- Slider Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const slider = document.getElementById('testimonialSlider');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                
+                // Scroll amount (card width + gap)
+                const getScrollAmount = () => {
+                    return slider.children.length > 0 ? slider.children[0].offsetWidth + 30 : 400;
+                };
+                
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                });
+                
+                // Auto-slide logic for all devices
+                let autoSlideInterval;
+                const startAutoSlide = () => {
+                    autoSlideInterval = setInterval(() => {
+                        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                            slider.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                        }
+                    }, 3000); // Slide every 3 seconds
+                };
+                
+                const stopAutoSlide = () => clearInterval(autoSlideInterval);
+                
+                startAutoSlide();
+                
+                // Pause on hover or touch
+                slider.addEventListener('mouseenter', stopAutoSlide);
+                slider.addEventListener('mouseleave', startAutoSlide);
+                slider.addEventListener('touchstart', stopAutoSlide);
+                slider.addEventListener('touchend', startAutoSlide);
+            });
+        </script>
     </section>
 
-    <!-- Sponsors & Partners -->
-    <section class="section sponsors-section">
-        <h2 class="section-title">Official Sponsors & Partners</h2>
+    <!-- Section: Sponsors & Partners -->
+    <section class="light-section" style="padding-bottom: 120px;">
+        <div class="center-header">
+            <span class="gold-subtitle-center">OUR PARTNERS</span>
+            <h2 class="section-title-center">SPONSORS <span class="gold-text">& PARTNERS</span></h2>
+            <div class="title-divider-gold-center"></div>
+            <p class="center-desc">Proud to partner with organisations that share our commitment to sporting excellence and youth development.</p>
+        </div>
+
         <div class="sponsors-grid">
-            <div class="sponsor-logo">
-                <span class="logo-text kempa">Kempa</span>
+            <div class="sponsor-box" style="padding: 0;">
+                <img src="assets/Logo/Sponsors/sponsor_1.png" alt="SPORTLINE" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
-            <div class="sponsor-logo">
-                <span class="logo-text molten">molten</span>
+            <div class="sponsor-box" style="padding: 0;">
+                <img src="assets/Logo/Sponsors/sponsor_2.png" alt="ARYA SPORTS" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
-            <div class="sponsor-logo">
-                <span class="logo-text hummel"><i class="fas fa-chevron-up"></i> hummel</span>
+            <div class="sponsor-box" style="padding: 0;">
+                <img src="assets/Logo/Sponsors/sponsor_3.png" alt="FITPRO" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
-            <div class="sponsor-logo">
-                <span class="logo-text asics">ASICS</span>
+            <div class="sponsor-box" style="padding: 0;">
+                <img src="assets/Logo/Sponsors/sponsor_4.png" alt="KRAFT INDIA" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
-            <div class="sponsor-logo">
-                <span class="logo-text decathlon">DECATHLON</span>
+            <div class="sponsor-box" style="padding: 0;">
+                <img src="assets/Logo/Sponsors/sponsor_5.png" alt="SAI" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div class="sponsor-box" style="padding: 0;">
+                <img src="assets/Logo/Sponsors/sponsor_6.png" alt="YOUTH FOUNDATION" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
         </div>
-    </section>
-
-    <!-- Contact Quick Info -->
-    <section class="section" style="text-align: center; background-color: var(--light-bg);">
-        <h2>Ready to start your journey?</h2>
-        <p style="margin: 20px 0;">Contact us today or visit our academy for a trial session.</p>
-        <div>
-            <span style="margin: 0 15px; font-weight: bold;"><i class="fas fa-phone"></i> +91 8765550245</span>
-            <span style="margin: 0 15px; font-weight: bold;"><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="color: #94a3b8; font-size: 0.9rem;">Interested in sponsoring? <a href="contact.html" style="color: #f59e0b; text-decoration: none; font-weight: 600;">Get in touch &rarr;</a></p>
         </div>
-        <a href="contact.html" class="btn" style="margin-top: 30px;">Contact Us</a>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Shyama Handball Academy</h4>
-                <p style="margin-bottom: 10px;">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: var(--secondary-color);"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</p>
-                <p><i class="fas fa-phone" style="margin-right: 5px; color: var(--secondary-color);"></i> +91 8765550245, 7084900009</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="training.html"><i class="fas fa-angle-right"></i> Training Programs</a></li>
-                    <li><a href="join.html"><i class="fas fa-angle-right"></i> Admissions</a></li>
-                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+    <footer class="dark-footer-simple">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="assets/Logo/Shyama%20Handball%20Academy.png" alt="Shyama Handball Academy Logo" style="width: 50px; height: 50px; object-fit: contain; margin-right: 15px; border-radius: 50%; background: #fff; padding: 5px;">
+                    <h3 class="footer-title" style="margin-bottom: 0;">Shyama Handball Academy</h3>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 8765550245, 7084900009</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Us</h4>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-divider"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        <li><a href="coaches.html"><i class="fas fa-chevron-right"></i> Coaches</a></li>
+                        <li><a href="players.html"><i class="fas fa-chevron-right"></i> Players</a></li>
+                    </ul>
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="join.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-social-links">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom-simple">
             <p>&copy; 2026 Shyama Handball Academy. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="js/main.js?v=5"></script>
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
 </body>
 </html>
 

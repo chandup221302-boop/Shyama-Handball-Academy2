@@ -1,43 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyama Handball Academy | Coaches & Staff</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coaches & Staff – Shyama Handball Academy</title>
+
     <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <style>
+    :root {
+      --navy:   var(--primary-color);
+      --navy2:  #1e293b;
+      --gold:   var(--secondary-color);
+      --gold2:  var(--accent-color);
+      --gold3:  #fecdd3;
+      --cream:  var(--light-bg);
+      --white: #ffffff;
+      --muted:  #64748b;
+      --border: #e2e8f0;
+      --text:   var(--text-color);
+      --radius: var(--border-radius);
+      --shadow: 0 8px 40px rgba(15, 23, 42, 0.08);
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Inter', sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      overflow-x: clip;
+    }
+
+    /* ── HERO ── */
+/* ── HERO ── */
+    .hero {
+      background: url('assets/Images/coaches_hero.png') no-repeat center center/cover;
+      position: relative;
+      height: 50vh;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      text-align:center;
+      overflow:hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(11, 17, 32, 0.6), rgba(11, 17, 32, 0.9));
+      z-index: 1;
+    }
+    .hero-noise {
+      position:absolute; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events:none; opacity:.5;
+    }
+    .hero-arc {
+      position:absolute; bottom:-2px; left:0; right:0;
+      height:80px; background:var(--cream);
+      clip-path:ellipse(60% 100% at 50% 100%);
+    }
+
+    /* decorative lines */
+    .hero-deco {
+      position:absolute; inset:0; pointer-events:none; overflow:hidden;
+    }
+    .hero-deco::before {
+      content:'';
+      position:absolute;
+      width:600px; height:600px; border-radius:50%;
+      border:1px solid rgba(201,168,76,.08);
+      top:-260px; right:-180px;
+    }
+    .hero-deco::after {
+      content:'';
+      position:absolute;
+      width:400px; height:400px; border-radius:50%;
+      border:1px solid rgba(201,168,76,.06);
+      bottom:-160px; left:-120px;
+    }
+
+    .hero-eyebrow {
+      position: relative; z-index: 2;
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(201,168,76,.3);
+      border-radius:30px; padding:6px 20px;
+      font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase;
+      color:var(--gold2); margin-bottom:1.5rem;
+      position:relative; z-index:1;
+    }
+    .hero h1 {
+      position: relative; z-index: 2;
+      font-family:'Montserrat', sans-serif;
+      font-size:clamp(2.4rem,6vw,4rem); font-weight:700;
+      color:#fff; line-height:1.1; margin-bottom:1rem;
+      position:relative; z-index:1;
+    }
+    .hero h1 em { font-style:italic; color:var(--gold2); }
+    .hero-sub {
+      position: relative; z-index: 2;
+      font-size:1rem; color:rgba(255,255,255,.6); font-weight:300;
+      max-width:520px; margin:0 auto 3.5rem; line-height:1.75;
+      position:relative; z-index:1;
+    }
+
+    /* ── STAFF STRIP (numbers) ── */
+    .stats-strip {
+      background: var(--navy2);
+      display:flex; justify-content:center; gap:3.5rem; flex-wrap:wrap;
+      padding:3rem 1.5rem;
+      border-top:1px solid rgba(255,255,255,.08);
+      position: relative;
+      z-index: 10;
+    }
+    .hs { text-align:center; }
+    .hs-num {
+      font-family:'Montserrat', sans-serif;
+      font-size:2.5rem; font-weight:700; color:var(--gold2); display:block;
+    }
+    .hs-label { font-size:13px; color:rgba(255,255,255,.7); letter-spacing:.8px; text-transform:uppercase; margin-top:5px; }
+
+    /* ── MAIN ── */
+    .main { max-width:1080px; margin:0 auto; padding:3rem 1.5rem 5rem; }
+
+    /* section divider */
+    .sec-divider {
+      display:flex; align-items:center; gap:16px;
+      margin:3.5rem 0 2rem;
+    }
+    .sec-divider:first-child { margin-top:0; }
+    .sd-ornament {
+      display:flex; align-items:center; gap:6px; flex-shrink:0;
+    }
+    .sd-diamond {
+      width:8px; height:8px; background:var(--gold);
+      transform:rotate(45deg); border-radius:1px;
+    }
+    .sd-line { width:30px; height:1px; background:var(--gold); opacity:.4; }
+    .sd-text {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.05rem; font-weight:600; letter-spacing:2px;
+      text-transform:uppercase; color:var(--navy2); white-space:nowrap;
+    }
+    .sd-full-line { flex:1; height:1px; background:var(--border); }
+
+    /* ══ HEAD COACH CARD ══ */
+    .head-coach-card {
+      background:var(--white);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid; grid-template-columns:320px 1fr;
+      animation:fadeUp .6s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* visual left panel */
+    .hc-visual {
+      background:linear-gradient(160deg, var(--navy) 0%, var(--navy2) 60%, #163050 100%);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:2.5rem 2rem;
+      position:relative; overflow:hidden;
+    }
+    .hc-visual::before {
+      content:'';
+      position:absolute;
+      width:280px; height:280px; border-radius:50%;
+      border:1px solid rgba(201,168,76,.1);
+      top:-80px; right:-80px;
+    }
+    .hc-visual::after {
+      content:'';
+      position:absolute;
+      width:200px; height:200px; border-radius:50%;
+      border:1px solid rgba(201,168,76,.07);
+      bottom:-60px; left:-60px;
+    }
+
+    .hc-avatar {
+      width:140px; height:140px; border-radius:50%;
+      background:linear-gradient(135deg, #c9a84c33, #0d2d5a);
+      border:3px solid var(--gold);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat', sans-serif;
+      font-size:3rem; font-weight:700; color:var(--gold2);
+      margin-bottom:1.25rem;
+      position:relative; z-index:1;
+      box-shadow:0 0 0 6px rgba(201,168,76,.12);
+    }
+
+    .hc-role-badge {
+      background:var(--gold);
+      color:var(--navy);
+      font-size:11px; font-weight:700;
+      letter-spacing:1.2px; text-transform:uppercase;
+      padding:5px 16px; border-radius:20px;
+      position:relative; z-index:1;
+      margin-bottom:.75rem;
+    }
+
+    .hc-name {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.4rem; font-weight:700; color:#fff;
+      text-align:center; line-height:1.2;
+      position:relative; z-index:1;
+    }
+
+    .hc-subtitle {
+      font-size:12px; color:rgba(255,255,255,.5);
+      text-align:center; margin-top:5px;
+      position:relative; z-index:1;
+    }
+
+    .hc-social {
+      display:flex; gap:10px; margin-top:1.25rem;
+      position:relative; z-index:1;
+    }
+    .hc-soc-btn {
+      width:34px; height:34px; border-radius:8px;
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.7); font-size:16px;
+      text-decoration:none; transition:all .2s;
+    }
+    .hc-soc-btn:hover { background:var(--gold); color:var(--navy); border-color:var(--gold); }
+
+    /* right content */
+    .hc-content { padding:2.25rem 2.5rem; display:flex; flex-direction:column; gap:1.5rem; }
+
+    .hc-header { border-bottom:1px solid var(--border); padding-bottom:1.25rem; }
+    .hc-header h2 {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.75rem; font-weight:700; color:var(--navy);
+      margin-bottom:4px; line-height:1.2;
+    }
+    .hc-header-meta {
+      display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;
+    }
+    .hc-chip {
+      display:inline-flex; align-items:center; gap:5px;
+      background:var(--cream); border:1px solid var(--border);
+      border-radius:8px; padding:5px 12px;
+      font-size:12.5px; color:var(--text); font-weight:500;
+    }
+    .hc-chip i { font-size:14px; color:var(--navy2); }
+
+    .hc-bio {
+      font-size:14.5px; color:var(--muted); line-height:1.85;
+    }
+
+    /* stat blocks */
+    .hc-stats {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1px; background:var(--border);
+      border-radius: var(--border-radius); overflow:hidden;
+      border:1px solid var(--border);
+    }
+    .hc-stat {
+      background:var(--cream); padding:1rem;
+      text-align:center;
+    }
+    .hc-stat-num {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.6rem; font-weight:700; color:var(--navy);
+      display:block; line-height:1;
+    }
+    .hc-stat-label { font-size:11.5px; color:var(--muted); margin-top:4px; }
+
+    /* achievement list */
+    .hc-ach-list { display:grid; gap:8px; }
+    .hc-ach {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:13.5px; color:var(--text); line-height:1.55;
+    }
+    .hc-ach i { font-size:16px; color:var(--gold); flex-shrink:0; margin-top:1px; }
+
+    /* ══ ASSISTANT COACHES GRID ══ */
+    .asst-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1.25rem;
+    }
+
+    .asst-card {
+      background:var(--white);
+      border-radius: var(--border-radius);
+      border:1px solid var(--border);
+      box-shadow:0 4px 20px rgba(7,30,61,.07);
+      overflow:hidden;
+      transition:transform .25s, box-shadow .25s;
+      animation:fadeUp .55s ease both;
+    }
+    .asst-card:nth-child(2) { animation-delay:.08s; }
+    .asst-card:nth-child(3) { animation-delay:.16s; }
+    .asst-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(7,30,61,.13); }
+
+    .ac-top {
+      background:linear-gradient(155deg,var(--navy),var(--navy2));
+      padding:1.75rem 1.5rem;
+      display:flex; flex-direction:column; align-items:center;
+      position:relative; overflow:hidden;
+    }
+    .ac-top::before {
+      content:''; position:absolute;
+      width:150px; height:150px; border-radius:50%;
+      border:1px solid rgba(201,168,76,.1);
+      top:-50px; right:-40px;
+    }
+    .ac-avatar {
+      width:80px; height:80px; border-radius:50%;
+      background:linear-gradient(135deg,#c9a84c22,#0d2d5a);
+      border:2px solid var(--gold);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat', sans-serif;
+      font-size:1.6rem; font-weight:700; color:var(--gold2);
+      margin-bottom:.9rem;
+      position:relative; z-index:1;
+      box-shadow:0 0 0 4px rgba(201,168,76,.1);
+    }
+    .ac-role {
+      background:rgba(201,168,76,.2); border:1px solid rgba(201,168,76,.35);
+      color:var(--gold2); font-size:10px; font-weight:700;
+      letter-spacing:1px; text-transform:uppercase;
+      padding:3px 12px; border-radius:20px;
+      margin-bottom:8px; position:relative; z-index:1;
+    }
+    .ac-name {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.1rem; font-weight:700; color:#fff;
+      text-align:center; position:relative; z-index:1;
+    }
+    .ac-spec {
+      font-size:11.5px; color:rgba(255,255,255,.5);
+      margin-top:3px; text-align:center;
+      position:relative; z-index:1;
+    }
+
+    .ac-body { padding:1.25rem 1.4rem; display:flex; flex-direction:column; gap:.85rem; }
+    .ac-bio { font-size:13px; color:var(--muted); line-height:1.75; }
+
+    .ac-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .ac-tag {
+      font-size:11.5px; padding:4px 10px;
+      border-radius:6px; border:1px solid var(--border);
+      color:var(--text); background:var(--cream);
+    }
+
+    .ac-footer {
+      padding:.9rem 1.4rem; border-top:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between;
+      background:var(--cream);
+    }
+    .ac-exp { font-size:12px; color:var(--muted); }
+    .ac-exp strong { color:var(--navy); }
+
+    /* ══ GUEST COACHES ══ */
+    .guest-grid {
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:1.25rem;
+    }
+    .guest-card {
+      background:var(--white);
+      border-radius: var(--border-radius);
+      border:1px solid var(--border);
+      box-shadow:0 4px 20px rgba(7,30,61,.07);
+      display:flex; gap:1.25rem; padding:1.5rem;
+      align-items:flex-start;
+      transition:transform .22s, box-shadow .22s;
+      animation:fadeUp .55s ease both;
+    }
+    .guest-card:nth-child(2) { animation-delay:.08s; }
+    .guest-card:hover { transform:translateY(-4px); box-shadow:0 10px 36px rgba(7,30,61,.11); }
+
+    .guest-avatar {
+      width:70px; height:70px; border-radius:50%;
+      background:linear-gradient(135deg,var(--navy),#1a4a7a);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat', sans-serif;
+      font-size:1.3rem; font-weight:700; color:var(--gold2);
+      flex-shrink:0; border:2px solid var(--gold);
+    }
+    .guest-info {}
+    .guest-badge {
+      display:inline-block;
+      background:#fef3c7; border:1px solid #fde68a;
+      color:#92400e; font-size:10px; font-weight:700;
+      letter-spacing:.8px; text-transform:uppercase;
+      padding:2px 10px; border-radius:20px; margin-bottom:6px;
+    }
+    .guest-name {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.1rem; font-weight:700; color:var(--navy);
+      margin-bottom:3px;
+    }
+    .guest-org { font-size:12px; color:var(--muted); margin-bottom:8px; }
+    .guest-desc { font-size:13px; color:var(--muted); line-height:1.7; }
+    .guest-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .guest-tag {
+      font-size:11px; padding:3px 9px;
+      border-radius:6px; background:var(--cream); border:1px solid var(--border);
+      color:var(--muted);
+    }
+
+    /* ══ CERTIFICATIONS ══ */
+    .cert-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1.1rem;
+    }
+    .cert-card {
+      background:var(--white);
+      border-radius: var(--border-radius);
+      border:1px solid var(--border);
+      padding:1.4rem;
+      display:flex; flex-direction:column; gap:.75rem;
+      box-shadow:0 3px 14px rgba(7,30,61,.06);
+      transition:all .22s;
+      animation:fadeUp .55s ease both;
+    }
+    .cert-card:hover { transform:translateY(-3px); border-color:var(--gold); }
+
+    .cert-icon-wrap {
+      width:50px; height:50px; border-radius: var(--border-radius);
+      display:flex; align-items:center; justify-content:center;
+      font-size:24px;
+    }
+    .ci-navy   { background:#e8edf5; color:var(--navy); }
+    .ci-gold   { background:#fef9c3; color:#92400e; }
+    .ci-green  { background:#dcfce7; color:#15803d; }
+    .ci-blue   { background:#dbeafe; color:#1d4ed8; }
+    .ci-red    { background:#fee2e2; color:#dc2626; }
+    .ci-purple { background:#ede9fe; color:#6d28d9; }
+
+    .cert-body h4 { font-size:14px; font-weight:600; color:var(--navy); margin-bottom:4px; }
+    .cert-body p  { font-size:12.5px; color:var(--muted); line-height:1.6; }
+    .cert-issuer  {
+      display:flex; align-items:center; gap:6px;
+      font-size:11.5px; color:var(--muted);
+      padding-top:.5rem; border-top:1px solid var(--border);
+    }
+    .cert-issuer i { font-size:14px; color:var(--gold); }
+    .cert-issuer strong { color:var(--text); }
+
+    /* ══ EXPERIENCE & ACHIEVEMENTS ══ */
+    .ach-layout {
+      display:grid; grid-template-columns:1fr 360px;
+      gap:1.5rem;
+    }
+
+    /* timeline */
+    .timeline { position:relative; padding-left:2rem; }
+    .timeline::before {
+      content:''; position:absolute;
+      left:0; top:8px; bottom:8px;
+      width:2px; background:linear-gradient(to bottom,var(--gold),var(--border));
+    }
+    .tl-item { position:relative; margin-bottom:2rem; }
+    .tl-item:last-child { margin-bottom:0; }
+    .tl-dot {
+      position:absolute; left:-2.5rem; top:6px;
+      width:14px; height:14px; border-radius:50%;
+      background:var(--gold); border:3px solid var(--white);
+      box-shadow:0 0 0 2px var(--gold);
+    }
+    .tl-year {
+      font-size:11px; font-weight:700; letter-spacing:1.2px;
+      text-transform:uppercase; color:var(--gold);
+      margin-bottom:5px;
+    }
+    .tl-card {
+      background:var(--white); border-radius: var(--border-radius);
+      border:1px solid var(--border); padding:1.1rem 1.25rem;
+      box-shadow:0 3px 14px rgba(7,30,61,.05);
+      transition:border-color .2s;
+    }
+    .tl-card:hover { border-color:var(--gold); }
+    .tl-card h4 { font-size:14px; font-weight:600; color:var(--navy); margin-bottom:5px; }
+    .tl-card p  { font-size:13px; color:var(--muted); line-height:1.65; }
+    .tl-badge {
+      display:inline-block; margin-top:8px;
+      font-size:11px; padding:2px 10px; border-radius:20px;
+      background:#f0fdf4; border:1px solid #bbf7d0; color:#15803d;
+      font-weight:600;
+    }
+
+    /* medals/awards sidebar */
+    .awards-col { display:flex; flex-direction:column; gap:1.1rem; }
+
+    .awards-header {
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      border-radius: var(--border-radius); padding:1.4rem;
+      text-align:center; position:relative; overflow:hidden;
+    }
+    .awards-header::before {
+      content:'🏆'; font-size:5rem; opacity:.1;
+      position:absolute; right:-10px; top:-10px;
+    }
+    .awards-header h4 {
+      font-family:'Montserrat', sans-serif;
+      font-size:1.1rem; font-weight:700; color:#fff;
+      margin-bottom:4px; position:relative; z-index:1;
+    }
+    .awards-header p { font-size:12px; color:rgba(255,255,255,.55); position:relative; z-index:1; }
+
+    .award-item {
+      background:var(--white); border-radius: var(--border-radius);
+      border:1px solid var(--border); padding:1rem 1.25rem;
+      display:flex; align-items:center; gap:12px;
+      box-shadow:0 2px 10px rgba(7,30,61,.05);
+      transition:all .2s;
+    }
+    .award-item:hover { border-color:var(--gold); transform:translateX(4px); }
+
+    .award-medal {
+      width:42px; height:42px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:20px; flex-shrink:0;
+    }
+    .medal-gold   { background:#fef9c3; }
+    .medal-silver { background:#f1f5f9; }
+    .medal-bronze { background:#fef3e8; }
+
+    .award-info h5 { font-size:13.5px; font-weight:600; color:var(--navy); margin-bottom:3px; }
+    .award-info p  { font-size:12px; color:var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      nav { padding:0 1.25rem; }
+      
+      .head-coach-card { grid-template-columns:1fr; }
+      .hc-visual { padding:2rem; }
+      .asst-grid { grid-template-columns:1fr 1fr; }
+      .cert-grid { grid-template-columns:1fr 1fr; }
+      .ach-layout { grid-template-columns:1fr; }
+    }
+    @media(max-width:600px){
+      .asst-grid  { grid-template-columns:1fr; }
+      .guest-grid { grid-template-columns:1fr; }
+      .cert-grid  { grid-template-columns:1fr; }
+      .hero { padding:0 1.25rem; }
+      .stats-strip { gap: 1.5rem; padding: 2rem 1rem; }
+      .hs-num { font-size: 2rem; }
+      .main { padding:2rem 1rem 4rem; }
+      .hc-stats { grid-template-columns:1fr 1fr; }
+      .hc-content { padding:1.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader"><div class="spinner"></div></div>
-    <!-- Top Bar for Contact Info -->
+
+<!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi</span>
-        </div>
-        <div class="top-bar-right">
             <span><i class="fas fa-phone"></i> +91 8765550245, 7084900009</span>
             <span><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
         </div>
+        <div class="top-bar-right">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <span class="language-selector"><i class="fas fa-globe"></i> English <i class="fas fa-caret-down"></i></span>
+        </div>
     </div>
 
-    <!-- Header Section -->
-    <header class="top-header">
-        <div class="logo-left">
-            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo">
-        </div>
-        <div class="header-center">
-            <h1>Shyama Handball Academy</h1>
-            <p>Under the aegis of : S.N. Pandey Khel Sansthan Trust</p>
-        </div>
-        <div class="logo-right">
-            <img src="SN Pandey Handball Khel Sansthan Logo (1).png" alt="S.N. Pandey Trust Logo">
-        </div>
-    </header>
-
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logos">
+            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo" class="logo-1">
+            <div class="vertical-divider"></div>
+            <span class="academy-name-text" style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 15px; white-space: nowrap; display: inline-block;">Shyama Handball Academy</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -51,83 +595,536 @@
         </ul>
     </nav>
 
-    <!-- Page Content -->
-    <section class="section">
-        <h2 class="section-title">Coaches & Staff</h2>
-        <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem;">Meet the dedicated professionals who train and guide our athletes.</p>
-        
-        <div class="grid-3">
-            <!-- Example Coach Card -->
-            <div class="card">
-                <div style="height: 200px; border-radius: 8px; margin-bottom: 20px; overflow: hidden;">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Head Coach" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h3>Head Coach</h3>
-                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 10px;">National Level Player</p>
-                <p>Over 15 years of experience in coaching and developing top-tier handball talent.</p>
-                <div style="margin-top: 15px; text-align: left; font-size: 0.9rem;">
-                    <strong>Certifications:</strong> NIS Certified<br>
-                    <strong>Achievements:</strong> Led state team to victory in 2023.
-                </div>
-            </div>
-            
-            <div class="card">
-                <div style="height: 200px; border-radius: 8px; margin-bottom: 20px; overflow: hidden;">
-                    <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Assistant Coach" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h3>Assistant Coach</h3>
-                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 10px;">Fitness & Conditioning Expert</p>
-                <p>Specializes in athletic performance and injury prevention for handball players.</p>
-            </div>
-            
-            <div class="card">
-                <div style="height: 200px; border-radius: 8px; margin-bottom: 20px; overflow: hidden;">
-                    <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Guest Coaches" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h3>Guest Coaches</h3>
-                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 10px;">International Experts</p>
-                <p>We regularly invite international and national level players for special masterclasses.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Shyama Handball Academy</h4>
-                <p style="margin-bottom: 10px;">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: var(--secondary-color);"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</p>
-                <p><i class="fas fa-phone" style="margin-right: 5px; color: var(--secondary-color);"></i> +91 8765550245, 7084900009</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="training.html"><i class="fas fa-angle-right"></i> Training Programs</a></li>
-                    <li><a href="join.html"><i class="fas fa-angle-right"></i> Admissions</a></li>
-                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-deco"></div>
+
+  <div class="hero-eyebrow"><i class="ti ti-award"></i>&nbsp; The Minds Behind the Champions</div>
+  <h1>Our <em>Coaches</em><br/>& Staff</h1>
+  <p class="hero-sub">Every champion is shaped by the hands of great teachers. Meet the certified, experienced, and passionate coaching team behind Shyama Handball Academy's legacy of excellence.</p>
+</section>
+
+<!-- Stats Strip Below Hero -->
+<section class="stats-strip" id="stats-section">
+  <div class="hs"><span class="hs-num"><span class="counter" data-target="18">0</span>+</span><div class="hs-label">Years Combined</div></div>
+  <div class="hs"><span class="hs-num"><span class="counter" data-target="6">0</span></span><div class="hs-label">Certified Coaches</div></div>
+  <div class="hs"><span class="hs-num"><span class="counter" data-target="40">0</span>+</span><div class="hs-label">State Medals Won</div></div>
+  <div class="hs"><span class="hs-num"><span class="counter" data-target="4">0</span></span><div class="hs-label">Guest Experts</div></div>
+  <div class="hs"><span class="hs-num"><span class="counter" data-target="12">0</span>+</span><div class="hs-label">Certifications Held</div></div>
+</section>
+
+<!-- ════ MAIN ════ -->
+<div class="main">
+
+  <!-- ── HEAD COACH ── -->
+  <div class="sec-divider">
+    <div class="sd-ornament"><div class="sd-diamond"></div><div class="sd-line"></div></div>
+    <div class="sd-text">Head Coach</div>
+    <div class="sd-full-line"></div>
+  </div>
+
+  <div class="head-coach-card">
+    <div class="hc-visual">
+      <div class="hc-avatar">RK</div>
+      <div class="hc-role-badge">Head Coach & Director</div>
+      <div class="hc-name">Shri Rajesh Kumar Pandey</div>
+      <div class="hc-subtitle">Arjuna Awardee Nominee · National Level Coach</div>
+      <div class="hc-social">
+        <a href="#" class="hc-soc-btn"><i class="ti ti-brand-facebook"></i></a>
+        <a href="#" class="hc-soc-btn"><i class="ti ti-brand-instagram"></i></a>
+        <a href="#" class="hc-soc-btn"><i class="ti ti-mail"></i></a>
+      </div>
+    </div>
+    <div class="hc-content">
+      <div class="hc-header">
+        <h2>Shri Rajesh Kumar Pandey</h2>
+        <div class="hc-header-meta">
+          <span class="hc-chip"><i class="ti ti-map-pin"></i> Varanasi, U.P.</span>
+          <span class="hc-chip"><i class="ti ti-clock"></i> 18+ Years Experience</span>
+          <span class="hc-chip"><i class="ti ti-certificate"></i> SAI Certified Level-3</span>
+          <span class="hc-chip"><i class="ti ti-users"></i> 500+ Athletes Trained</span>
+        </div>
+      </div>
+
+      <p class="hc-bio">Shri Rajesh Kumar Pandey is the founding head coach and driving force behind Shyama Handball Academy. With over 18 years of dedicated service to handball development in Uttar Pradesh, Coach Pandey has built a training methodology that seamlessly blends classical Indian coaching values with modern sport science principles. A former national-level player himself, he brings first-hand competitive experience to every session, understanding precisely what it takes to perform under pressure. His vision of accessible, world-class handball training for every child — regardless of background — is the very soul of this academy.</p>
+
+      <div class="hc-stats">
+        <div class="hc-stat">
+          <span class="hc-stat-num">18+</span>
+          <div class="hc-stat-label">Years Coaching</div>
+        </div>
+        <div class="hc-stat">
+          <span class="hc-stat-num">500+</span>
+          <div class="hc-stat-label">Athletes Trained</div>
+        </div>
+        <div class="hc-stat">
+          <span class="hc-stat-num">40+</span>
+          <div class="hc-stat-label">State Medals</div>
+        </div>
+      </div>
+
+      <div class="hc-ach-list">
+        <div class="hc-ach"><i class="ti ti-trophy"></i> Produced 12 state-level champions and 3 national-level players over career span</div>
+        <div class="hc-ach"><i class="ti ti-certificate"></i> SAI (Sports Authority of India) Level-3 Coaching Certification holder</div>
+        <div class="hc-ach"><i class="ti ti-medal"></i> Best Coach Award — U.P. Handball Association (2018, 2021)</div>
+        <div class="hc-ach"><i class="ti ti-flag"></i> Chief coach for Varanasi District Handball team at State Championships (2015–2024)</div>
+        <div class="hc-ach"><i class="ti ti-school"></i> Pioneered the School Integration Program reaching 20+ schools across Varanasi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ASSISTANT COACHES ── -->
+  <div class="sec-divider">
+    <div class="sd-ornament"><div class="sd-diamond"></div><div class="sd-line"></div></div>
+    <div class="sd-text">Assistant Coaches</div>
+    <div class="sd-full-line"></div>
+  </div>
+
+  <div class="asst-grid">
+
+    <!-- Coach 1 -->
+    <div class="asst-card">
+      <div class="ac-top">
+        <div class="ac-avatar">AM</div>
+        <div class="ac-role">Asst. Coach – Boys</div>
+        <div class="ac-name">Shri Arun Mishra</div>
+        <div class="ac-spec">Goalkeeper Specialist · Tactics Expert</div>
+      </div>
+      <div class="ac-body">
+        <p class="ac-bio">A former state-level goalkeeper, Coach Arun brings rare technical depth to goalkeeper training and team defensive systems. His tactical acumen has shaped the defensive identity of multiple championship-winning teams at district level.</p>
+        <div class="ac-tags">
+          <span class="ac-tag">Goalkeeping</span>
+          <span class="ac-tag">Defense Systems</span>
+          <span class="ac-tag">Set Plays</span>
+          <span class="ac-tag">Youth Dev.</span>
+        </div>
+      </div>
+      <div class="ac-footer">
+        <span class="ac-exp">Experience: <strong>9 Years</strong></span>
+        <span class="ac-exp">SAI <strong>Level-2</strong></span>
+      </div>
+    </div>
+
+    <!-- Coach 2 -->
+    <div class="asst-card">
+      <div class="ac-top">
+        <div class="ac-avatar">PS</div>
+        <div class="ac-role">Asst. Coach – Girls</div>
+        <div class="ac-name">Ms. Priya Srivastava</div>
+        <div class="ac-spec">Female Athlete Development · Agility Coach</div>
+      </div>
+      <div class="ac-body">
+        <p class="ac-bio">Coach Priya is a certified female athlete development specialist who has coached the Girls Team to four consecutive state titles. Her empathetic, high-energy coaching style creates a safe and fiercely competitive environment for young women in sport.</p>
+        <div class="ac-tags">
+          <span class="ac-tag">Agility Training</span>
+          <span class="ac-tag">Women's Athletics</span>
+          <span class="ac-tag">Speed & Footwork</span>
+          <span class="ac-tag">Leadership</span>
+        </div>
+      </div>
+      <div class="ac-footer">
+        <span class="ac-exp">Experience: <strong>7 Years</strong></span>
+        <span class="ac-exp">SAI <strong>Level-2</strong></span>
+      </div>
+    </div>
+
+    <!-- Coach 3 -->
+    <div class="asst-card">
+      <div class="ac-top">
+        <div class="ac-avatar">VT</div>
+        <div class="ac-role">Fitness & Conditioning</div>
+        <div class="ac-name">Shri Vikas Tiwari</div>
+        <div class="ac-spec">Strength Coach · Sports Physiologist</div>
+      </div>
+      <div class="ac-body">
+        <p class="ac-bio">Coach Vikas holds a degree in Sports Science and has developed the academy's comprehensive fitness curriculum from the ground up. He oversees strength training, injury prevention protocols, and sport-specific conditioning programs for all enrolled athletes.</p>
+        <div class="ac-tags">
+          <span class="ac-tag">Strength & Power</span>
+          <span class="ac-tag">Injury Prevention</span>
+          <span class="ac-tag">Sports Nutrition</span>
+          <span class="ac-tag">Recovery</span>
+        </div>
+      </div>
+      <div class="ac-footer">
+        <span class="ac-exp">Experience: <strong>6 Years</strong></span>
+        <span class="ac-exp">NSCA <strong>CSCS</strong></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── GUEST COACHES ── -->
+  <div class="sec-divider">
+    <div class="sd-ornament"><div class="sd-diamond"></div><div class="sd-line"></div></div>
+    <div class="sd-text">Guest Coaches & Specialists</div>
+    <div class="sd-full-line"></div>
+  </div>
+
+  <div class="guest-grid">
+
+    <div class="guest-card">
+      <div class="guest-avatar">SK</div>
+      <div class="guest-info">
+        <div class="guest-badge">Guest Expert</div>
+        <div class="guest-name">Shri Suresh Kumar</div>
+        <div class="guest-org">Former National Team Player · Sports Authority of India</div>
+        <p class="guest-desc">A decorated former national handball player, Shri Suresh Kumar conducts intensive masterclasses for advanced and tournament-track athletes quarterly. His sessions on elite mental preparation and national-level match simulation are among the most valued at the academy.</p>
+        <div class="guest-tags">
+          <span class="guest-tag">National Level Experience</span>
+          <span class="guest-tag">Mental Conditioning</span>
+          <span class="guest-tag">Elite Technique</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guest-card">
+      <div class="guest-avatar">NV</div>
+      <div class="guest-info">
+        <div class="guest-badge">Guest Expert</div>
+        <div class="guest-name">Dr. Neha Varma</div>
+        <div class="guest-org">Sports Psychologist · BHU Department of Sports Science</div>
+        <p class="guest-desc">Dr. Neha Varma visits the academy monthly to conduct sports psychology workshops for both athletes and coaches. Her evidence-based interventions in performance anxiety management, focus training, and post-competition recovery have measurably improved team results.</p>
+        <div class="guest-tags">
+          <span class="guest-tag">Sports Psychology</span>
+          <span class="guest-tag">Performance Anxiety</span>
+          <span class="guest-tag">Focus & Mindset</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guest-card">
+      <div class="guest-avatar">MK</div>
+      <div class="guest-info">
+        <div class="guest-badge">Guest Expert</div>
+        <div class="guest-name">Shri Mahesh Keshari</div>
+        <div class="guest-org">U.P. State Handball Association – Technical Director</div>
+        <p class="guest-desc">As the Technical Director of U.P. Handball Association, Shri Mahesh Keshari provides strategic coaching clinics aligned with national federation standards. His guidance ensures our training methodology remains current with national and international handball evolution.</p>
+        <div class="guest-tags">
+          <span class="guest-tag">National Federation</span>
+          <span class="guest-tag">Tactical Systems</span>
+          <span class="guest-tag">Coaching Clinics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guest-card">
+      <div class="guest-avatar">RD</div>
+      <div class="guest-info">
+        <div class="guest-badge">Guest Expert</div>
+        <div class="guest-name">Dr. Ranjit Das</div>
+        <div class="guest-org">Sports Medicine Physician · Varanasi Sports Medicine Centre</div>
+        <p class="guest-desc">Dr. Ranjit Das oversees the medical welfare of all academy athletes through bi-monthly health screenings, injury diagnosis, and rehabilitation planning. His proactive sports medicine approach has significantly reduced training-related injuries across all programs.</p>
+        <div class="guest-tags">
+          <span class="guest-tag">Sports Medicine</span>
+          <span class="guest-tag">Injury Rehab</span>
+          <span class="guest-tag">Athlete Health</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <div class="sec-divider">
+    <div class="sd-ornament"><div class="sd-diamond"></div><div class="sd-line"></div></div>
+    <div class="sd-text">Certifications & Accreditations</div>
+    <div class="sd-full-line"></div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <div class="cert-icon-wrap ci-navy"><i class="ti ti-certificate"></i></div>
+      <div class="cert-body">
+        <h4>SAI Level-3 Coaching Certificate</h4>
+        <p>The highest national coaching qualification issued by the Sports Authority of India — held by Head Coach Rajesh Kumar Pandey, recognizing elite-level coaching competence.</p>
+      </div>
+      <div class="cert-issuer"><i class="ti ti-building"></i> <strong>Sports Authority of India (SAI)</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon-wrap ci-gold"><i class="ti ti-award"></i></div>
+      <div class="cert-body">
+        <h4>SAI Level-2 Coaching Certificate</h4>
+        <p>Intermediate coaching certification held by Assistant Coaches Arun Mishra and Priya Srivastava, validating professional-level handball coaching standards.</p>
+      </div>
+      <div class="cert-issuer"><i class="ti ti-building"></i> <strong>Sports Authority of India (SAI)</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon-wrap ci-green"><i class="ti ti-barbell"></i></div>
+      <div class="cert-body">
+        <h4>NSCA – CSCS (Certified Strength & Conditioning Specialist)</h4>
+        <p>International certification in strength and conditioning science held by Coach Vikas Tiwari, ensuring our fitness programs meet global performance standards.</p>
+      </div>
+      <div class="cert-issuer"><i class="ti ti-world"></i> <strong>NSCA International</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon-wrap ci-blue"><i class="ti ti-flag"></i></div>
+      <div class="cert-body">
+        <h4>U.P. Handball Association – Affiliation Certificate</h4>
+        <p>Shyama Handball Academy is officially affiliated with the Uttar Pradesh Handball Association, enabling athletes to compete in all state-recognised tournaments and leagues.</p>
+      </div>
+      <div class="cert-issuer"><i class="ti ti-building-community"></i> <strong>U.P. Handball Association</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon-wrap ci-red"><i class="ti ti-heart-rate-monitor"></i></div>
+      <div class="cert-body">
+        <h4>Sports First Aid & Emergency Response Certification</h4>
+        <p>All full-time coaching staff hold current Sports First Aid certification, ensuring a medically prepared environment for every training session and competition.</p>
+      </div>
+      <div class="cert-issuer"><i class="ti ti-first-aid-kit"></i> <strong>Indian Red Cross Society</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon-wrap ci-purple"><i class="ti ti-school"></i></div>
+      <div class="cert-body">
+        <h4>Youth Athlete Development Program (YADP) Certification</h4>
+        <p>Specialized certification in age-appropriate coaching methods for youth sports development, ensuring our beginner and school programs are built on sound developmental principles.</p>
+      </div>
+      <div class="cert-issuer"><i class="ti ti-building"></i> <strong>MYAS – Ministry of Youth Affairs & Sports</strong></div>
+    </div>
+
+  </div>
+
+  <!-- ── EXPERIENCE & ACHIEVEMENTS ── -->
+  <div class="sec-divider">
+    <div class="sd-ornament"><div class="sd-diamond"></div><div class="sd-line"></div></div>
+    <div class="sd-text">Experience & Achievements</div>
+    <div class="sd-full-line"></div>
+  </div>
+
+  <div class="ach-layout">
+
+    <!-- TIMELINE -->
+    <div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2025</div>
+          <div class="tl-card">
+            <h4>State U-19 Championship — Team Gold 🥇</h4>
+            <p>The Boys U-19 team coached by Head Coach Pandey and Asst. Coach Arun Mishra clinched the state gold medal at the Uttar Pradesh U-19 Handball Championship, defeating the defending champion team in the final.</p>
+            <span class="tl-badge">State Level · U-19 Boys</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2023</div>
+          <div class="tl-card">
+            <h4>4 Athletes Selected for National Camp</h4>
+            <p>Four athletes trained at Shyama Handball Academy were selected for the U.P. state squad that attended the National Sports Development Camp — the highest number from any single academy in the region.</p>
+            <span class="tl-badge">National Level</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2022</div>
+          <div class="tl-card">
+            <h4>Girls Team — Back-to-Back State Champions</h4>
+            <p>Under Coach Priya Srivastava's guidance, the Girls Team won consecutive U.P. State Championships in 2021 and 2022, establishing the academy as the top girls' handball institution in the Varanasi division.</p>
+            <span class="tl-badge">State Level · Girls Team</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2021</div>
+          <div class="tl-card">
+            <h4>Best Coach Award — U.P. Handball Association</h4>
+            <p>Head Coach Rajesh Kumar Pandey received the Best Coach of the Year Award from the Uttar Pradesh Handball Association for his outstanding contribution to grassroots handball development in the state.</p>
+            <span class="tl-badge">Individual Award</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2018</div>
+          <div class="tl-card">
+            <h4>School Integration Program Launched</h4>
+            <p>Coach Pandey pioneered the School Handball Integration Program, partnering with 8 schools in Year 1. The program has since expanded to 20+ schools, reaching over 3,000 students annually across Varanasi.</p>
+            <span class="tl-badge">Program Launch</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2010</div>
+          <div class="tl-card">
+            <h4>Shyama Handball Academy Founded</h4>
+            <p>Head Coach Rajesh Kumar Pandey founded the academy under the aegis of S.N. Pandey Khel Sansthan Trust with a founding batch of 22 students and a single outdoor court in Chandpur, Varanasi.</p>
+            <span class="tl-badge">Academy Founded</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AWARDS COLUMN -->
+    <div class="awards-col">
+      <div class="awards-header">
+        <h4>Medals & Honours</h4>
+        <p>A proud record of competitive excellence</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal medal-gold">🥇</div>
+        <div class="award-info">
+          <h5>State Championship Gold × 6</h5>
+          <p>Boys & Girls teams combined (2015–2025)</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal medal-silver">🥈</div>
+        <div class="award-info">
+          <h5>State Championship Silver × 8</h5>
+          <p>Across age categories (2013–2024)</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal medal-bronze">🥉</div>
+        <div class="award-info">
+          <h5>State Championship Bronze × 12</h5>
+          <p>Multiple categories over the years</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal" style="background:#ede9fe; font-size:18px;">🏅</div>
+        <div class="award-info">
+          <h5>Best Coach Award × 2</h5>
+          <p>U.P. Handball Association (2018 & 2021)</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal" style="background:#fef3c7; font-size:18px;">⭐</div>
+        <div class="award-info">
+          <h5>4 National Camp Selections</h5>
+          <p>Athletes selected for national-level camps (2023)</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal" style="background:#f0fdf4; font-size:18px;">🌟</div>
+        <div class="award-info">
+          <h5>3,000+ Students Reached</h5>
+          <p>Via School Integration Program annually</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-medal" style="background:#dbeafe; font-size:18px;">🎖️</div>
+        <div class="award-info">
+          <h5>District Best Institution × 3</h5>
+          <p>Varanasi District Sports Council (2019, 2022, 2024)</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /main -->
+
+<!-- Footer -->
+    <footer class="dark-footer-simple">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="assets/Logo/Shyama%20Handball%20Academy.png" alt="Shyama Handball Academy Logo" style="width: 50px; height: 50px; object-fit: contain; margin-right: 15px; border-radius: 50%; background: #fff; padding: 5px;">
+                    <h3 class="footer-title" style="margin-bottom: 0;">Shyama Handball Academy</h3>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 8765550245, 7084900009</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Us</h4>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-divider"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        <li><a href="coaches.html"><i class="fas fa-chevron-right"></i> Coaches</a></li>
+                        <li><a href="players.html"><i class="fas fa-chevron-right"></i> Players</a></li>
+                    </ul>
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="join.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-social-links">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom-simple">
             <p>&copy; 2026 Shyama Handball Academy. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js?v=5"></script>
+<script>
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter');
+  const speed = 150; 
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+</script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
-
-
-
-
-

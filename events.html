@@ -1,45 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyama Handball Academy | Events & Tournaments</title>
+    <title>Events & Tournaments — Shyama Handball Academy</title>
+    <meta name="description" content="Welcome to Shyama Handball Academy, Varanasi. Join us for premium handball training, professional coaching, and state-of-the-art facilities.">
     <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+/* Custom styles for Events Page */
+.events-hero {
+    background: url('assets/Images/events_hero.png') no-repeat center center/cover;
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.events-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.95));
+}
+.eh-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 0 20px;
+}
+.eh-title {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+.eh-title span { color: var(--accent-color); }
+.eh-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+.ev-section {
+    padding: 5rem 5%;
+    background: var(--primary-color);
+    color: var(--white);
+}
+.ev-section.alt {
+    background: #1e293b;
+}
+
+/* Featured Event */
+.featured-event-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+.featured-event-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--accent-color);
+}
+@media(max-width: 900px) {
+    .featured-event-card { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; text-align: center; }
+    .featured-event-card::before { width: 100%; height: 4px; }
+}
+.fe-date-block {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+.fe-date-block .day {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+}
+.fe-date-block .month {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.fe-info h3 {
+    font-size: 2.2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.fe-info p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.fe-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+@media(max-width: 900px) {
+    .fe-meta { justify-content: center; }
+}
+.fe-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+.fe-meta-item i { color: var(--accent-color); font-size: 1.2rem; }
+
+/* Schedule List */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.schedule-row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.schedule-row:hover {
+    transform: translateX(10px);
+    border-color: var(--accent-color);
+    background: rgba(255,255,255,0.05);
+}
+@media(max-width: 768px) {
+    .schedule-row { grid-template-columns: 1fr; text-align: center; gap: 1rem; }
+}
+.sr-date {
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    padding-right: 1.5rem;
+}
+@media(max-width: 768px) {
+    .sr-date { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+}
+.sr-date .day { font-size: 2.2rem; font-weight: 800; color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1; }
+.sr-date .month { font-size: 0.9rem; color: var(--accent-color); text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
+.sr-info h4 { font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem; }
+.sr-info p { color: #94a3b8; font-size: 0.95rem; }
+.sr-teams {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+.result-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.result-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+}
+.rc-header {
+    background: rgba(0,0,0,0.2);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.rc-date { font-size: 0.85rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.rc-badge { background: rgba(34,197,94,0.15); color: #22C55E; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(34,197,94,0.3); }
+.rc-badge.loss { background: rgba(239,68,68,0.15); color: #ef4444; border-color: rgba(239,68,68,0.3); }
+.rc-body {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+.rc-tournament { font-size: 0.9rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 600; }
+.rc-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.rc-team { font-size: 1.1rem; font-weight: 600; color: #fff; width: 100px; }
+.rc-points { font-size: 2.5rem; font-weight: 800; font-family: 'Montserrat', sans-serif; }
+.rc-points.win { color: var(--accent-color); }
+.rc-points.lose { color: #94a3b8; }
+.rc-divider { font-size: 1.5rem; color: #475569; }
+
+.btn-solid-gold {
+    background: var(--accent-color);
+    color: #000;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.btn-solid-gold:hover {
+    background: #d97706;
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+    transform: translateY(-2px);
+}
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-outline:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+</style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader"><div class="spinner"></div></div>
-    <!-- Top Bar for Contact Info -->
+<!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi</span>
-        </div>
-        <div class="top-bar-right">
             <span><i class="fas fa-phone"></i> +91 8765550245, 7084900009</span>
             <span><i class="fas fa-envelope"></i> hyamahandballacademy@gmail.com</span>
         </div>
+        <div class="top-bar-right">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <span class="language-selector"><i class="fas fa-globe"></i> English <i class="fas fa-caret-down"></i></span>
+        </div>
     </div>
-
-    <!-- Header Section -->
-    <header class="top-header">
-        <div class="logo-left">
-            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo">
-        </div>
-        <div class="header-center">
-            <h1>Shyama Handball Academy</h1>
-            <p>Under the aegis of : S.N. Pandey Khel Sansthan Trust</p>
-        </div>
-        <div class="logo-right">
-            <img src="SN Pandey Handball Khel Sansthan Logo (1).png" alt="S.N. Pandey Trust Logo">
-        </div>
-    </header>
 
     <!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logos">
+            <img src="Shyama Handball Academy.png" alt="Shyama Handball Academy Logo" class="logo-1">
+            <div class="vertical-divider"></div>
+            <span class="academy-name-text" style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 15px; white-space: nowrap; display: inline-block;">Shyama Handball Academy</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" >Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="training.html">Training Programs</a></li>
             <li><a href="coaches.html">Coaches & Staff</a></li>
@@ -51,62 +302,208 @@
         </ul>
     </nav>
 
-    <!-- Page Content -->
-    <section class="section">
-        <h2 class="section-title">Events & Tournaments</h2>
-        <div class="grid-3">
-            <div class="card" style="text-align: left;">
-                <div style="background-color: var(--primary-color); color: white; padding: 10px; border-radius: 4px; display: inline-block; margin-bottom: 15px;">Upcoming</div>
-                <h3 style="margin-bottom: 10px;">Varanasi District Championship</h3>
-                <p><strong>Date:</strong> 15th - 18th Oct, 2026</p>
-                <p><strong>Venue:</strong> Sampurnanand Sports Stadium</p>
-                <p style="margin-top: 10px;">Our academy teams will be participating across all age groups.</p>
-            </div>
-            <div class="card" style="text-align: left;">
-                <div style="background-color: var(--secondary-color); color: white; padding: 10px; border-radius: 4px; display: inline-block; margin-bottom: 15px;">Completed</div>
-                <h3 style="margin-bottom: 10px;">State Level Summer Cup</h3>
-                <p><strong>Date:</strong> 10th June, 2026</p>
-                <p><strong>Result:</strong> Under-19 Boys - Runners Up</p>
-                <p style="margin-top: 10px;">A great performance by our senior boys team against top academies in the state.</p>
-            </div>
-            <div class="card" style="text-align: left;">
-                <div style="background-color: var(--accent-color); color: white; padding: 10px; border-radius: 4px; display: inline-block; margin-bottom: 15px;">Internal</div>
-                <h3 style="margin-bottom: 10px;">Monthly Intra-Academy Matches</h3>
-                <p><strong>Date:</strong> Last Sunday of every month</p>
-                <p><strong>Venue:</strong> Academy Grounds</p>
-                <p style="margin-top: 10px;">Friendly competitive matches to assess player progress and team dynamics.</p>
-            </div>
-        </div>
-    </section>
+<header class="events-hero">
+    <div class="eh-content">
+        <h1 class="eh-title">EVENTS & <span>TOURNAMENTS</span></h1>
+        <p class="eh-desc">Stay updated with the latest matches, upcoming tournaments, and recent achievements of Shyama Handball Academy.</p>
+    </div>
+</header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Shyama Handball Academy</h4>
-                <p style="margin-bottom: 10px;">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: var(--secondary-color);"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</p>
-                <p><i class="fas fa-phone" style="margin-right: 5px; color: var(--secondary-color);"></i> +91 8765550245, 7084900009</p>
+<!-- Featured Upcoming Event -->
+<section class="ev-section">
+    <div class="center-header" style="margin-bottom: 4rem;">
+        <h2 class="section-title-center">FEATURED <span class="gold-text">EVENT</span></h2>
+        <div class="title-divider-gold-center"></div>
+    </div>
+    
+    <div class="featured-event-card">
+        <div class="fe-date-block">
+            <div class="day">15</div>
+            <div class="month">NOV 2026</div>
+        </div>
+        <div class="fe-info">
+            <h3>National Club Handball Championship</h3>
+            <p>Join us to support the Shyama Handball Academy senior team as they compete against the top clubs from across the country in this prestigious 5-day tournament.</p>
+            <div class="fe-meta">
+                <div class="fe-meta-item"><i class="fas fa-map-marker-alt"></i> Indoor Stadium, Varanasi</div>
+                <div class="fe-meta-item"><i class="far fa-clock"></i> 10:00 AM Onwards</div>
+                <div class="fe-meta-item"><i class="fas fa-ticket-alt"></i> Free Entry</div>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="training.html"><i class="fas fa-angle-right"></i> Training Programs</a></li>
-                    <li><a href="join.html"><i class="fas fa-angle-right"></i> Admissions</a></li>
-                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+            <a href="#" class="btn-solid-gold">View Details</a>
+        </div>
+    </div>
+</section>
+
+<!-- Match Schedule -->
+<section class="ev-section alt">
+    <div class="center-header" style="margin-bottom: 4rem;">
+        <h2 class="section-title-center">UPCOMING <span class="gold-text">MATCHES</span></h2>
+        <div class="title-divider-gold-center"></div>
+        <p style="text-align: center; color: #cbd5e1; font-size: 1.1rem;">Check out where our teams are playing next.</p>
+    </div>
+    
+    <div class="schedule-list">
+        <div class="schedule-row">
+            <div class="sr-date">
+                <div class="day">20</div>
+                <div class="month">NOV</div>
+            </div>
+            <div class="sr-info">
+                <h4>U-19 State League - Match 1</h4>
+                <p><i class="fas fa-map-pin" style="color:var(--accent-color); margin-right:5px;"></i> Sports Authority Ground, Lucknow</p>
+            </div>
+            <div class="sr-teams">
+                SHA U-19 <span style="color:var(--accent-color); margin:0 10px;">VS</span> Lucknow HC
+            </div>
+        </div>
+        
+        <div class="schedule-row">
+            <div class="sr-date">
+                <div class="day">22</div>
+                <div class="month">NOV</div>
+            </div>
+            <div class="sr-info">
+                <h4>U-19 State League - Match 2</h4>
+                <p><i class="fas fa-map-pin" style="color:var(--accent-color); margin-right:5px;"></i> Sports Authority Ground, Lucknow</p>
+            </div>
+            <div class="sr-teams">
+                SHA U-19 <span style="color:var(--accent-color); margin:0 10px;">VS</span> Kanpur Royals
+            </div>
+        </div>
+        
+        <div class="schedule-row">
+            <div class="sr-date">
+                <div class="day">05</div>
+                <div class="month">DEC</div>
+            </div>
+            <div class="sr-info">
+                <h4>Varanasi District Championship</h4>
+                <p><i class="fas fa-map-pin" style="color:var(--accent-color); margin-right:5px;"></i> SHA Home Court</p>
+            </div>
+            <div class="sr-teams">
+                Academy Seniors <span style="color:var(--accent-color); margin:0 10px;">VS</span> City Club
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="#" class="btn-outline">Download Full Schedule</a>
+    </div>
+</section>
+
+<!-- Recent Results -->
+<section class="ev-section">
+    <div class="center-header" style="margin-bottom: 4rem;">
+        <h2 class="section-title-center">RECENT <span class="gold-text">RESULTS</span></h2>
+        <div class="title-divider-gold-center"></div>
+    </div>
+    
+    <div class="results-grid">
+        <div class="result-card">
+            <div class="rc-header">
+                <span class="rc-date">Oct 12, 2026</span>
+                <span class="rc-badge">VICTORY</span>
+            </div>
+            <div class="rc-body">
+                <div class="rc-tournament">UP State Championship Final</div>
+                <div class="rc-score">
+                    <div class="rc-team" style="text-align: right;">SHA Seniors</div>
+                    <div class="rc-points win">32</div>
+                    <div class="rc-divider">-</div>
+                    <div class="rc-points lose">28</div>
+                    <div class="rc-team" style="text-align: left;">Agra Kings</div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">A thrilling final match where our seniors secured the state title for the 3rd consecutive year!</p>
+                <a href="gallery.html" class="btn-outline" style="padding: 8px 20px; font-size: 0.85rem;">View Photos</a>
+            </div>
+        </div>
+        
+        <div class="result-card">
+            <div class="rc-header">
+                <span class="rc-date">Sep 28, 2026</span>
+                <span class="rc-badge">VICTORY</span>
+            </div>
+            <div class="rc-body">
+                <div class="rc-tournament">U-14 Inter-Academy Cup</div>
+                <div class="rc-score">
+                    <div class="rc-team" style="text-align: right;">SHA U-14</div>
+                    <div class="rc-points win">24</div>
+                    <div class="rc-divider">-</div>
+                    <div class="rc-points lose">15</div>
+                    <div class="rc-team" style="text-align: left;">Delhi Stars</div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">Our youngest squad dominated the court and brought home the gold medal.</p>
+                <a href="gallery.html" class="btn-outline" style="padding: 8px 20px; font-size: 0.85rem;">View Photos</a>
+            </div>
+        </div>
+        
+        <div class="result-card">
+            <div class="rc-header">
+                <span class="rc-date">Sep 15, 2026</span>
+                <span class="rc-badge loss">NARROW LOSS</span>
+            </div>
+            <div class="rc-body">
+                <div class="rc-tournament">National Invitational Cup</div>
+                <div class="rc-score">
+                    <div class="rc-team" style="text-align: right;">SHA Seniors</div>
+                    <div class="rc-points lose">30</div>
+                    <div class="rc-divider">-</div>
+                    <div class="rc-points win">31</div>
+                    <div class="rc-team" style="text-align: left;">Punjab Police</div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">A hard-fought semi-final battle that ended in the final seconds of extra time.</p>
+                <a href="gallery.html" class="btn-outline" style="padding: 8px 20px; font-size: 0.85rem;">View Photos</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+    <footer class="dark-footer-simple">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="assets/Logo/Shyama%20Handball%20Academy.png" alt="Shyama Handball Academy Logo" style="width: 50px; height: 50px; object-fit: contain; margin-right: 15px; border-radius: 50%; background: #fff; padding: 5px;">
+                    <h3 class="footer-title" style="margin-bottom: 0;">Shyama Handball Academy</h3>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Under the aegis of S.N. Pandey Khel Sansthan Trust</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> D-5 Shiv Nagar Colony, Chandpur, Varanasi-221107</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 8765550245, 7084900009</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Us</h4>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-divider"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        <li><a href="coaches.html"><i class="fas fa-chevron-right"></i> Coaches</a></li>
+                        <li><a href="players.html"><i class="fas fa-chevron-right"></i> Players</a></li>
+                    </ul>
+                    <ul class="footer-links" style="margin-bottom:0;">
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="join.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="footer-divider"></div>
+                <ul class="footer-social-links">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom-simple">
             <p>&copy; 2026 Shyama Handball Academy. All rights reserved.</p>
         </div>
     </footer>
@@ -114,8 +511,3 @@
     <script src="js/main.js?v=5"></script>
 </body>
 </html>
-
-
-
-
-

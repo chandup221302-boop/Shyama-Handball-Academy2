@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileBtn = document.createElement('div');
         mobileBtn.className = 'mobile-menu-btn';
         mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        navbar.insertBefore(mobileBtn, navbar.firstChild);
+        navbar.insertBefore(mobileBtn, navLinks);
 
         // Create overlay
         const overlay = document.createElement('div');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const openMenu = () => {
             navLinks.classList.add('active');
             overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            // Removed to prevent sticky navbar from jumping to top
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
         };
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeMenu = () => {
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
-            document.body.style.overflow = '';
+            // Removed to match openMenu
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         };
@@ -165,4 +165,119 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Trigger once on load
+
+    // Hero Video Slider Logic
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+    
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        let slideInterval;
+
+        const showSlide = (index) => {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroDots.forEach(dot => dot.classList.remove('active'));
+
+            heroSlides[index].classList.add('active');
+            heroDots[index].classList.add('active');
+            
+            // Ensure video plays when active
+            const video = heroSlides[index].querySelector('video');
+            if(video) {
+                video.currentTime = 0;
+                video.play().catch(e => console.log('Video autoplay prevented', e));
+            }
+        };
+
+        const nextSlide = () => {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            showSlide(currentSlide);
+        };
+
+        const startSlideShow = () => {
+            slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+        };
+
+        const stopSlideShow = () => {
+            clearInterval(slideInterval);
+        };
+
+        // Initialize dots click
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopSlideShow();
+                currentSlide = index;
+                showSlide(currentSlide);
+                startSlideShow();
+            });
+        });
+
+        // Start slideshow
+        startSlideShow();
+    }
+
+    // Number Counter Animation
+    const counters = document.querySelectorAll('.stat-card h3');
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const text = el.innerText;
+                const hasPlus = text.includes('+');
+                const target = parseInt(text.replace(/[^0-9]/g, ''));
+                if (!isNaN(target)) {
+                    let count = 0;
+                    const increment = target / 100;
+                    
+                    const updateCount = () => {
+                        count += increment;
+                        if (count < target) {
+                            el.innerText = Math.ceil(count) + (hasPlus ? '+' : '');
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            el.innerText = target + (hasPlus ? '+' : '');
+                        }
+                    };
+                    updateCount();
+                }
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    // Lightbox Modal
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    
+    if (lightboxModal && lightboxImg && lightboxClose) {
+        document.querySelectorAll('.bento-item').forEach(item => {
+            item.style.cursor = 'zoom-in';
+            item.addEventListener('click', () => {
+                const img = item.querySelector('.bento-bg-img');
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightboxModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        const closeLightbox = () => {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal || e.target === lightboxClose) {
+                closeLightbox();
+            }
+        });
+    }
 });
